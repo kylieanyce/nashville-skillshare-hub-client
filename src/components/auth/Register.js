@@ -35,7 +35,7 @@ export const Register = (props) => {
                 .then(res => {
                     if ("token" in res) {
                         localStorage.setItem("nssh_token", res.token)
-                        props.history.push("/home")
+                        props.history.push("/events/home")
                     }
                 })
         } else {

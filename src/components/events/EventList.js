@@ -38,7 +38,7 @@ export const EventList = (props) => {
                         host={event.hosts} />
                 })}
             </div>
-            <button onClick={() => history.push("/create")}>Add an Event</button>
+            <button onClick={() => history.push("/events/new")}>Add an Event</button>
         </div>
     )
 }

@@ -11,10 +11,10 @@ export const ApplicationViews = () => {
             lineHeight: "1.75rem"
         }}>
             <EventProvider>
-                <Route exact path="/home">
+                <Route exact path="/events/home">
                     <EventList />
                 </Route>
-                <Route exact path="/create" >
+                <Route exact path="/events/new" >
                     <EventForm />
                 </Route>
             </EventProvider>

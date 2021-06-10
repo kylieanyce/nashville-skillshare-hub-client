@@ -164,7 +164,7 @@ export const EventForm = () => {
                                 description: currentEvent.description,
                                 hosts: currentUser
                             })
-                                .then(() => history.push("/home"))
+                                .then(() => history.push("/events/home"))
                         }}
                         className="btn btn-primary">Save Event</button>
                     :
@@ -182,7 +182,7 @@ export const EventForm = () => {
                                 description: currentEvent.description,
                                 hosts: currentUser
                             })
-                                .then(() => history.push("/home"))
+                                .then(() => history.push("/events/home"))
                         }}
                         className="btn btn-primary">Create Event</button>
             }

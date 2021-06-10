@@ -26,7 +26,7 @@ export const Login = props => {
             .then(res => {
                 if ("valid" in res && res.valid && "token" in res) {
                     localStorage.setItem("nssh_token", res.token)
-                    props.history.push("/home")
+                    props.history.push("/events/home")
                 }
                 else {
                     invalidDialog.current.showModal()
