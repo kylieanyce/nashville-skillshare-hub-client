@@ -1,9 +1,12 @@
 import React, { useState, useContext, useEffect } from "react"
 import { EventContext } from "./EventProvider.js"
 import { EventCard } from "./EventCard.js"
+import { useHistory } from 'react-router-dom';
+
 
 export const EventList = (props) => {
     const { events, getEvents, searchTerms } = useContext(EventContext)
+    const history = useHistory();
 
     const [filteredEvents, setFiltered] = useState([])
 
@@ -30,10 +33,12 @@ export const EventList = (props) => {
                         id={event.id}
                         description={event.description}
                         time={event.time}
+                        title={event.title}
                         date={event.date}
-                        host={event.host} />
+                        host={event.hosts} />
                 })}
             </div>
+            <button onClick={() => history.push("/create")}>Add an Event</button>
         </div>
     )
 }
