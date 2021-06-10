@@ -4,6 +4,8 @@ export const EventContext = React.createContext()
 
 export const EventProvider = (props) => {
     const [events, setEvents] = useState([])
+    const [searchTerms, setSearchTerms] = useState("")
+
 
     const getEvents = () => {
         return fetch("http://localhost:8000/events", {
@@ -41,52 +43,53 @@ export const EventProvider = (props) => {
         return fetch(`http://localhost:8000/events/${event.id}`, {
             method: "PUT",
             headers: {
+                "Content-Type": "application/json",
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
             },
-\        })
+            body: JSON.stringify(event)
+        })
             .then(getEvents)
     }
 
-const deleteEvent = (event) => {
-    return fetch(`http://localhost:8000/events/${event.id}`, {
-        method: "DELETE",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Token ${localStorage.getItem("nssh_token")}`
-        },
-        body: JSON.stringify(event)
-    })
-        .then(getEvents)
-}
+    const deleteEvent = (event) => {
+        return fetch(`http://localhost:8000/events/${event.id}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("nssh_token")}`
+            },
+        })
+            .then(getEvents)
+    }
 
-const unbookmarkEvent = eventId => {
-    return fetch(`http://localhost:8000/events/${eventId}/signup`, {
-        method: "DELETE",
-        headers: {
-            "Authorization": `Token ${localStorage.getItem("nssh_token")}`
-        }
-    })
-        .then(getEvents)
-}
+    const unbookmarkEvent = eventId => {
+        return fetch(`http://localhost:8000/events/${eventId}/signup`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("nssh_token")}`
+            }
+        })
+            .then(getEvents)
+    }
 
 
-const bookmarkEvent = eventId => {
-    return fetch(`http://localhost:8000/events/${eventId}/signup`, {
-        method: "POST",
-        headers: {
-            "Authorization": `Token ${localStorage.getItem("nssh_token")}`
-        }
-    })
-        .then(response => response.json())
-        .then(getEvents)
-}
+    const bookmarkEvent = eventId => {
+        return fetch(`http://localhost:8000/events/${eventId}/signup`, {
+            method: "POST",
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("nssh_token")}`
+            }
+        })
+            .then(response => response.json())
+            .then(getEvents)
+    }
 
-return (
-    <EventContext.Provider value={{
-        events, getEvents, createEvent, bookmarkEvent,
-        unbookmarkEvent, getEventById, updateEvent, deleteEvent
-    }} >
-        { props.children}
-    </EventContext.Provider>
-)
+    return (
+        <EventContext.Provider value={{
+            events, getEvents, createEvent, bookmarkEvent,
+            unbookmarkEvent, getEventById, updateEvent, deleteEvent,
+            searchTerms, setSearchTerms
+        }} >
+            { props.children}
+        </EventContext.Provider>
+    )
 }
