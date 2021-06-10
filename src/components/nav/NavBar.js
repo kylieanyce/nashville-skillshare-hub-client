@@ -14,7 +14,7 @@ export const NavBar = (props) => {
             <li className="navbar__item">
                 <Link to="/bookmark">Bookmarks</Link>
             </li>
-            {/* {
+            {
                 (localStorage.getItem("nssh_token") !== null) ?
                     <li className="nav-item">
                         <button className="nav-link fakeLink"
@@ -32,7 +32,7 @@ export const NavBar = (props) => {
                             <Link className="nav-link" to="/register">Register</Link>
                         </li>
                     </>
-            } */}
+            }
         </ul>
     )
 }
