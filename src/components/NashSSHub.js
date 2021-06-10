@@ -4,6 +4,7 @@ import { ApplicationViews } from "./ApplicationViews"
 import { NavBar } from "./nav/NavBar"
 import { Register } from "./auth/Register"
 import { Login } from "./auth/Login"
+import moment from 'moment'
 
 export const NashSSHub = () => (
     <>
