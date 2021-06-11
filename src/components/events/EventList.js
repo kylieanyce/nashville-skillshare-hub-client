@@ -28,13 +28,11 @@ export const EventList = (props) => {
             <h2 className="neon">Explore Upcoming Events</h2>
             <div className="postList">
                 {filteredEvents.map(event => {
-                    console.log(event)
                     return <EventCard key={event.id}
                         id={event.id}
                         description={event.description}
-                        time={event.time}
                         title={event.title}
-                        date={event.date}
+                        datetime={event.datetime}
                         host={event.hosts} />
                 })}
             </div>

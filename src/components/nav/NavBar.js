@@ -6,13 +6,13 @@ export const NavBar = (props) => {
     return (
         <ul className="navbar">
             <li className="navbar__item">
-                <Link to="/events/home">Home</Link>
+                <Link to="/events">Home</Link>
             </li>
             <li className="navbar__item">
-                <Link to="/events/myevents">My Events</Link>
+                <Link to="/myevents">My Events</Link>
             </li>
             <li className="navbar__item">
-                <Link to="/events/bookmarks">Bookmarks</Link>
+                <Link to="/bookmarks">Bookmarks</Link>
             </li>
             {
                 (localStorage.getItem("nssh_token") !== null) ?
