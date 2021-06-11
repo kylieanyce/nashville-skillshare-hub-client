@@ -12,12 +12,11 @@ export const EventForm = () => {
 
     const [currentEvent, setEvent] = useState({
         title: "",
-        date: "",
-        time: "",
+        datetime: "",
         cost: "",
         description: "",
         location: "",
-        location: "",
+        address: "",
         hostname: "",
         hosts: 0
     })
@@ -29,8 +28,7 @@ export const EventForm = () => {
                     getEventById(eventId).then(event => {
                         setEvent({
                             title: event.title,
-                            date: event.date,
-                            time: event.time,
+                            datetime: event.datetime,
                             cost: event.cost,
                             location: event.location,
                             address: event.address,
@@ -65,14 +63,14 @@ export const EventForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="date">Date: </label>
-                    <input type="date" id="date" name="date" required autoFocus className="form-control"
-                        value={currentEvent.date}
+                    <input type="datetime-local" id="datetime" name="datetime" required autoFocus className="form-control"
+                        value={currentEvent.datetime}
                         onChange={changeEventState}
                     />
                 </div>
             </fieldset>
 
-            <fieldset>
+            {/* <fieldset>
                 <div className="form-group">
                     <label htmlFor="time">Time: </label>
                     <input type="time" id="time" name="time" required autoFocus className="form-control"
@@ -80,7 +78,7 @@ export const EventForm = () => {
                         onChange={changeEventState}
                     />
                 </div>
-            </fieldset>
+            </fieldset> */}
 
             <fieldset>
                 <div className="form-group">
@@ -155,8 +153,7 @@ export const EventForm = () => {
                             updateEvent({
                                 id: parseInt(eventId),
                                 title: currentEvent.title,
-                                date: currentEvent.date,
-                                time: currentEvent.time,
+                                datetime: currentEvent.datetime,
                                 cost: currentEvent.cost,
                                 location: currentEvent.location,
                                 address: currentEvent.address,
@@ -173,8 +170,7 @@ export const EventForm = () => {
                             evt.preventDefault()
                             createEvent({
                                 title: currentEvent.title,
-                                date: currentEvent.date,
-                                time: currentEvent.time,
+                                datetime: currentEvent.datetime,
                                 cost: currentEvent.cost,
                                 location: currentEvent.location,
                                 address: currentEvent.address,
