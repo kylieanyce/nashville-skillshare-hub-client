@@ -31,9 +31,8 @@ export const EventList = (props) => {
                     return <EventCard key={event.id}
                         id={event.id}
                         description={event.description}
-                        time={event.time}
                         title={event.title}
-                        date={event.date}
+                        datetime={event.datetime}
                         host={event.hosts} />
                 })}
             </div>

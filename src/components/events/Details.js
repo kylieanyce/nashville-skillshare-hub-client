@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState, useRef } from "react"
 import { useParams, useHistory } from "react-router-dom"
 import { EventContext } from "./EventProvider";
+import moment from "moment"
+
 
 export const EventDetails = () => {
     const { getEventById, deleteEvent } = useContext(EventContext)
@@ -12,8 +14,7 @@ export const EventDetails = () => {
     // set post state variable
     const [currentEvent, setEvent] = useState({
         title: "",
-        date: "",
-        time: "",
+        datetime: "",
         cost: "",
         description: "",
         location: "",
@@ -38,8 +39,8 @@ export const EventDetails = () => {
                 <div className="detailItem">
                     <h2 style={{ textTransform: 'capitalize' }}>{currentEvent.title}</h2>
 
-                    <p><strong>Date: </strong>{currentEvent.date}</p>
-                    <p><strong>Time: </strong>{currentEvent.time}</p>
+                    <p><strong>Date: </strong>{moment(currentEvent.datetime).format("LL")}</p>
+                    <p><strong>Time: </strong>{moment(currentEvent.datetime).format("LT")}</p>
                     <p><strong>Cost: </strong>{currentEvent.cost}</p>
                     <p style={{ textTransform: 'capitalize' }}><strong>Hosted By: </strong>{currentEvent.hostname}</p>
                     <p style={{ textTransform: 'capitalize' }}><strong>Location: </strong>{currentEvent.location}</p>

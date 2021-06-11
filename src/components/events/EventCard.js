@@ -16,9 +16,7 @@ export const EventCard = (event) => {
                         </h3>
                     </Link>
                     <h4 style={{ textTransform: 'capitalize' }}>{event.hosts}</h4>
-                    <h5>{new Date(event.date).toLocaleDateString("en-US")}</h5>
-                    <h5>{event.time}</h5>
-                    {/* <h5>{event.time}</h5> */}
+                    <h5>{moment(event.datetime).format('L')}</h5>
                     <p>{event.description}</p>
                 </div>
             </div>
