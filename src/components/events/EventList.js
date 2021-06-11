@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 
 export const EventList = (props) => {
-    const { events, getEvents, searchTerms } = useContext(EventContext)
+    const { events, getEvents, searchTerms, getMyEvents } = useContext(EventContext)
     const history = useHistory();
 
     const [filteredEvents, setFiltered] = useState([])

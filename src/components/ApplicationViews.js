@@ -19,6 +19,9 @@ export const ApplicationViews = () => {
                 <Route exact path="/events">
                     <EventList />
                 </Route>
+                <Route exact path="/events/myevents">
+                    <EventList />
+                </Route>
                 <Route exact path="/events/new" >
                     <EventForm />
                 </Route>

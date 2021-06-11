@@ -26,6 +26,16 @@ export const EventProvider = (props) => {
             .then(response => response.json())
     }
 
+    const getMyEvents = (id) => {
+        return fetch(`http://localhost:8000/events/myevents`, {
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("nssh_token")}`
+            }
+        })
+            .then(response => response.json())
+            .then(setEvents)
+    }
+
     const createEvent = (event) => {
         return fetch("http://localhost:8000/events", {
             method: "POST",
@@ -87,9 +97,9 @@ export const EventProvider = (props) => {
         <EventContext.Provider value={{
             events, getEvents, createEvent, bookmarkEvent,
             unbookmarkEvent, getEventById, updateEvent, deleteEvent,
-            searchTerms, setSearchTerms
+            searchTerms, setSearchTerms, getMyEvents
         }} >
-            { props.children}
+            {props.children}
         </EventContext.Provider>
     )
 }
