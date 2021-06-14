@@ -1,18 +1,24 @@
 import React, { useState, useContext, useEffect } from "react"
 import { EventContext } from "./EventProvider.js"
 import { EventCard } from "./EventCard.js"
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 
 export const EventList = (props) => {
     const { events, getEvents, searchTerms, getMyEvents } = useContext(EventContext)
     const history = useHistory();
+    const location = useLocation();
 
     const [filteredEvents, setFiltered] = useState([])
 
     useEffect(() => {
-        getEvents()
-    }, [])
+        const currentPath = location.pathname;
+        if (currentPath.search("myevents") === -1) {
+            getEvents()
+        } else {
+            getMyEvents()
+        }
+    }, [location]);
 
     useEffect(() => {
         if (searchTerms !== "") {
