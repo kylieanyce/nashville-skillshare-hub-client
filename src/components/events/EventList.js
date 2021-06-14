@@ -5,7 +5,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 
 export const EventList = (props) => {
-    const { events, setEvents, getEvents, searchTerms, getMyEvents } = useContext(EventContext)
+    const { events, setEvents, getEvents, searchTerms, getMyEvents, deleteEvent } = useContext(EventContext)
     const history = useHistory();
     const location = useLocation();
     const [myEvents, setMyEvents] = useState(false);
@@ -38,23 +38,29 @@ export const EventList = (props) => {
                 <div className="postList">
                     {events.map(event => {
                         eventobj.id = event.id
-                        return <EventCard key={event.id}
-                            id={event.id}
-                            description={event.description}
-                            title={event.title}
-                            datetime={event.datetime}
-                            host={event.hosts} />
-                    })}
-                    <div>
-                        {myEvents
-                            ? <button onClick={() => history.push(`/events/${eventobj.id}/edit`)}> Edit </button> : ""}
-
-                        {myEvents
-                            ? <button onClick={() => history.push(`/events/${eventobj.id}`)}> Delete </button>
-                            :
-                            <button onClick={() => history.push("/events/new")}>Add an Event</button>
+                        {
+                            return (
+                                <>
+                                    <EventCard key={event.id}
+                                        id={event.id}
+                                        description={event.description}
+                                        title={event.title}
+                                        datetime={event.datetime}
+                                        host={event.hosts} />
+                                    {myEvents ?
+                                        <div>
+                                            <button onClick={evt => { deleteEvent(event.id) }}> Delete </button>
+                                            <button onClick={() => history.push(`/events/${eventobj.id}/edit`)}> Edit </button >
+                                        </div>
+                                        : ""
+                                    }
+                                </>
+                            )
                         }
-                    </div>
+                    })}
+
+                    {myEvents ? "" : <button onClick={() => history.push("/events/new")}>Add an Event</button>}
+
                 </div>
             </div>
         </>
