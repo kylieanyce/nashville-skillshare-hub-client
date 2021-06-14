@@ -97,7 +97,7 @@ export const EventProvider = (props) => {
         <EventContext.Provider value={{
             events, getEvents, createEvent, bookmarkEvent,
             unbookmarkEvent, getEventById, updateEvent, deleteEvent,
-            searchTerms, setSearchTerms, getMyEvents
+            searchTerms, setSearchTerms, setEvents, getMyEvents
         }} >
             {props.children}
         </EventContext.Provider>

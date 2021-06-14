@@ -5,18 +5,17 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 
 export const EventList = (props) => {
-    const { events, getEvents, searchTerms, getMyEvents } = useContext(EventContext)
+    const { events, setEvents, getEvents, searchTerms, getMyEvents } = useContext(EventContext)
     const history = useHistory();
     const location = useLocation();
-    let myevents = false;
-    const [filteredEvents, setFiltered] = useState([])
+    const [myEvents, setMyEvents] = useState(false);
 
     useEffect(() => {
         const currentPath = location.pathname;
         if (currentPath.search("myevents") === -1) {
-            myevents = true;
             getEvents()
         } else {
+            setMyEvents(true);
             getMyEvents()
         }
     }, [location]);
@@ -24,53 +23,40 @@ export const EventList = (props) => {
     useEffect(() => {
         if (searchTerms !== "") {
             const subset = events.filter(event => event.description.toLowerCase().includes(searchTerms) || event.description.toLowerCase().includes(searchTerms))
-            setFiltered(subset)
-        } else {
-            setFiltered(events)
+            setEvents(subset)
         }
-    }, [searchTerms, events])
+    }, [searchTerms])
+
 
     let eventobj = {}
 
     return (
         <>
-            {myevents ?
-                <div className="eventPosts">
-                    <h2 className="neon">My Events</h2>
-                    <div className="postList">
-                        {filteredEvents.map(event => {
-                            eventobj.id = event.id
-                            return <EventCard key={event.id}
-                                id={event.id}
-                                description={event.description}
-                                title={event.title}
-                                datetime={event.datetime}
-                                host={event.hosts} />
-                        })}
-                        <button onClick={() => history.push(`/events/${eventobj.id}/edit`)}> Edit </button>
+
+            <div className="eventPosts">
+                {myEvents ? <h2 className="neon">My Events</h2> : <h2 className="neon">Explore Upcoming Events</h2>}
+                <div className="postList">
+                    {events.map(event => {
+                        eventobj.id = event.id
+                        return <EventCard key={event.id}
+                            id={event.id}
+                            description={event.description}
+                            title={event.title}
+                            datetime={event.datetime}
+                            host={event.hosts} />
+                    })}
+                    <div>
+                        {myEvents
+                            ? <button onClick={() => history.push(`/events/${eventobj.id}/edit`)}> Edit </button> : ""}
+
+                        {myEvents
+                            ? <button onClick={() => history.push(`/events/${eventobj.id}`)}> Delete </button>
+                            :
+                            <button onClick={() => history.push("/events/new")}>Add an Event</button>
+                        }
                     </div>
-                    <button onClick={() => history.push("/events/new")}>Add an Event</button>
                 </div>
-                :
-
-                < div className="eventPosts">
-                    <h2 className="neon">Explore Upcoming Events</h2>
-                    <div className="postList">
-                        {filteredEvents.map(event => {
-                            return <EventCard key={event.id}
-                                id={event.id}
-                                description={event.description}
-                                title={event.title}
-                                datetime={event.datetime}
-                                host={event.hosts} />
-                        })}
-                    </div>
-                    <button onClick={() => history.push("/events/new")}>Add an Event</button>
-                </div>
-
-
-
-            }
+            </div>
         </>
     )
 }
