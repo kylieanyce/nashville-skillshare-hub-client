@@ -8,12 +8,13 @@ export const EventList = (props) => {
     const { events, getEvents, searchTerms, getMyEvents } = useContext(EventContext)
     const history = useHistory();
     const location = useLocation();
-
+    let myevents = false;
     const [filteredEvents, setFiltered] = useState([])
 
     useEffect(() => {
         const currentPath = location.pathname;
         if (currentPath.search("myevents") === -1) {
+            myevents = true;
             getEvents()
         } else {
             getMyEvents()
@@ -29,20 +30,47 @@ export const EventList = (props) => {
         }
     }, [searchTerms, events])
 
+    let eventobj = {}
+
     return (
-        <div className="eventPosts">
-            <h2 className="neon">Explore Upcoming Events</h2>
-            <div className="postList">
-                {filteredEvents.map(event => {
-                    return <EventCard key={event.id}
-                        id={event.id}
-                        description={event.description}
-                        title={event.title}
-                        datetime={event.datetime}
-                        host={event.hosts} />
-                })}
-            </div>
-            <button onClick={() => history.push("/events/new")}>Add an Event</button>
-        </div>
+        <>
+            {myevents ?
+                <div className="eventPosts">
+                    <h2 className="neon">My Events</h2>
+                    <div className="postList">
+                        {filteredEvents.map(event => {
+                            eventobj.id = event.id
+                            return <EventCard key={event.id}
+                                id={event.id}
+                                description={event.description}
+                                title={event.title}
+                                datetime={event.datetime}
+                                host={event.hosts} />
+                        })}
+                        <button onClick={() => history.push(`/events/${eventobj.id}/edit`)}> Edit </button>
+                    </div>
+                    <button onClick={() => history.push("/events/new")}>Add an Event</button>
+                </div>
+                :
+
+                < div className="eventPosts">
+                    <h2 className="neon">Explore Upcoming Events</h2>
+                    <div className="postList">
+                        {filteredEvents.map(event => {
+                            return <EventCard key={event.id}
+                                id={event.id}
+                                description={event.description}
+                                title={event.title}
+                                datetime={event.datetime}
+                                host={event.hosts} />
+                        })}
+                    </div>
+                    <button onClick={() => history.push("/events/new")}>Add an Event</button>
+                </div>
+
+
+
+            }
+        </>
     )
 }
