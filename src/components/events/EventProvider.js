@@ -61,8 +61,8 @@ export const EventProvider = (props) => {
             .then(getEvents)
     }
 
-    const deleteEvent = (event) => {
-        return fetch(`http://localhost:8000/events/${event.id}`, {
+    const deleteEvent = (id) => {
+        return fetch(`http://localhost:8000/events/${id}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
