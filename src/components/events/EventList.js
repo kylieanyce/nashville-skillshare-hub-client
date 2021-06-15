@@ -27,9 +27,6 @@ export const EventList = (props) => {
         }
     }, [searchTerms])
 
-
-    let eventobj = {}
-
     return (
         <>
 
@@ -37,7 +34,6 @@ export const EventList = (props) => {
                 {myEvents ? <h2 className="neon">My Events</h2> : <h2 className="neon">Explore Upcoming Events</h2>}
                 <div className="postList">
                     {events.map(event => {
-                        eventobj.id = event.id
                         {
                             return (
                                 <>
@@ -46,14 +42,8 @@ export const EventList = (props) => {
                                         description={event.description}
                                         title={event.title}
                                         datetime={event.datetime}
-                                        host={event.hosts} />
-                                    {myEvents ?
-                                        <div>
-                                            <button onClick={evt => { deleteEvent(event.id) }}> Delete </button>
-                                            <button onClick={() => history.push(`/events/${eventobj.id}/edit`)}> Edit </button >
-                                        </div>
-                                        : ""
-                                    }
+                                        host={event.hosts}
+                                    />
                                 </>
                             )
                         }

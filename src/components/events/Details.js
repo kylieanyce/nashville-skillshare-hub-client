@@ -6,8 +6,7 @@ import "./Details.css"
 
 
 export const EventDetails = () => {
-    const { getEventById, deleteEvent } = useContext(EventContext)
-    const currentUserId = parseInt(sessionStorage.getItem("nssh_token"))
+    const { getEventById, deleteEvent, updateEvent } = useContext(EventContext)
     const { eventId } = useParams();
     const history = useHistory();
     const modal = useRef();
@@ -21,7 +20,8 @@ export const EventDetails = () => {
         location: "",
         address: "",
         hostname: "",
-        hosts: 0
+        hosts: 0,
+        organizers: true
     });
 
     // grab post by ID from params and set post
@@ -32,7 +32,16 @@ export const EventDetails = () => {
             })
     }, [])
 
-    // renders details of plant
+    const handleModal = () => {
+        const deleteGuardRail = modal.current.showModal()
+    }
+
+    const handleDelete = () => {
+        deleteEvent(eventId)
+        modal.current.close()
+        history.push("/events/myevents")
+    }
+
     return (
         <section>
             <h2 className="neon">Event Details</h2>
@@ -53,6 +62,27 @@ export const EventDetails = () => {
                     <p style={{ textTransform: 'capitalize' }}><strong>Location: </strong>{currentEvent.location}</p>
                     <p style={{ textTransform: 'capitalize' }}><strong>Address: </strong>{currentEvent.address}</p>
                     <p><strong>Event Description: </strong>{currentEvent.description}</p>
+                    {currentEvent.organizers ?
+                        <div>
+                            <button onClick={handleModal}> Delete </button>
+                            <button onClick={() => history.push(`/events/${currentEvent.id}/edit`)}> Edit </button >
+                        </div>
+                        : ""}
+                    <dialog className="guardRailModal" ref={modal}>
+                        <h3>Delete</h3>
+                        <p>Are you sure you want to delete this event? </p>
+                        <button onClick={handleDelete}>Delete</button>
+                        {/* <button onClick={() => {
+                            modal.current.close()
+                            deleteEvent(currentEvent.id)
+                            console.log(currentEvent)
+                            history.push("/events/myevents")
+                        }}> Yes, Delete! </button> */}
+                        <button onClick={() => {
+                            modal.current.close()
+                            history.push(`/events/detail/${currentEvent.id}`)
+                        }}> No, Cancel </button>
+                    </dialog>
 
                 </div>
             </div>
