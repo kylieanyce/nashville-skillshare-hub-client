@@ -2,10 +2,11 @@ import React, { useState, useContext, useEffect } from "react"
 import { EventContext } from "./EventProvider.js"
 import { EventCard } from "./EventCard.js"
 import { useHistory, useLocation } from 'react-router-dom';
+import { SearchEvent } from "./Search.js";
 
 
 export const EventList = (props) => {
-    const { events, setEvents, getEvents, searchTerms, getMyEvents, deleteEvent } = useContext(EventContext)
+    const { events, setEvents, getEvents, searchTerms, getMyEvents } = useContext(EventContext)
     const history = useHistory();
     const location = useLocation();
     const [myEvents, setMyEvents] = useState(false);
@@ -20,18 +21,19 @@ export const EventList = (props) => {
         }
     }, [location]);
 
-    useEffect(() => {
-        if (searchTerms !== "") {
-            const subset = events.filter(event => event.description.toLowerCase().includes(searchTerms) || event.description.toLowerCase().includes(searchTerms))
-            setEvents(subset)
-        }
-    }, [searchTerms])
+    // useEffect(() => {
+    //     if (searchTerms !== "") {
+    //         const subset = events.filter(event => event.description.toLowerCase().includes(searchTerms) || event.description.toLowerCase().includes(searchTerms))
+    //         setEvents(subset)
+    //     }
+    // }, [searchTerms])
 
     return (
         <>
 
             <div className="eventPosts">
                 {myEvents ? <h2 className="neon">My Events</h2> : <h2 className="neon">Explore Upcoming Events</h2>}
+                <SearchEvent />
                 <div className="postList">
                     {events.map(event => {
                         {
