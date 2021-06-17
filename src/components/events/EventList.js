@@ -6,7 +6,7 @@ import { SearchEvents } from "./Search.js";
 
 
 export const EventList = (props) => {
-    const { events, setEvents, getEvents, searchTerms, getMyEvents } = useContext(EventContext)
+    const { events, getEvents, getMyEvents } = useContext(EventContext)
     const history = useHistory();
     const location = useLocation();
     const [myEvents, setMyEvents] = useState(false);
@@ -20,13 +20,6 @@ export const EventList = (props) => {
             getMyEvents()
         }
     }, [location]);
-
-    // useEffect(() => {
-    //     if (searchTerms !== "") {
-    //         const subset = events.filter(event => event.description.toLowerCase().includes(searchTerms) || event.description.toLowerCase().includes(searchTerms))
-    //         setEvents(subset)
-    //     }
-    // }, [searchTerms])
 
     return (
         <>
