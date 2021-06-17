@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react"
 import { EventContext } from "./EventProvider.js"
 import { EventCard } from "./EventCard.js"
 import { useHistory, useLocation } from 'react-router-dom';
-import { SearchEvent } from "./Search.js";
+import { SearchEvents } from "./Search.js";
 
 
 export const EventList = (props) => {
@@ -33,7 +33,7 @@ export const EventList = (props) => {
 
             <div className="eventPosts">
                 {myEvents ? <h2 className="neon">My Events</h2> : <h2 className="neon">Explore Upcoming Events</h2>}
-                <SearchEvent />
+                <SearchEvents />
                 <div className="postList">
                     {events.map(event => {
                         {
