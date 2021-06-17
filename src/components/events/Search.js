@@ -1,25 +1,40 @@
 import React, { useState, useContext } from "react"
-import { EventContext } from "../events/EventProvider";
+import { EventContext } from "./EventProvider";
 
 // displays search bar
-export const SearchEvent = () => {
+export const SearchEvents = () => {
     const { searchEvents } = useContext(EventContext)
-    const [searchTerms, setSearchTerms] = useState("")
+    const [searchCost, setSearchCost] = useState("")
+    const [searchDate, setSearchDate] = useState("")
 
     // on key up, grabs value from target and sets search terms with it
     return (
         <>
             <div className="searchBar">
-                <label>Cost:
-                    <input type="text"
-                        className="searchInput"
-                        onChange={(event) => {
-                            event.preventDefault()
-                            setSearchTerms(event.target.value)
-                        }}
-                        placeholder="Search for an event... " />
-                </label>
-                <button onClick={(event) => searchEvents(searchTerms)}>Search</button>
+                <div>
+                    <label>Cost:
+                        <input type="text"
+                            className="searchInput"
+                            onChange={(event) => {
+                                event.preventDefault()
+                                setSearchCost(event.target.value)
+                            }}
+                            placeholder="Free... " />
+                    </label>
+                    <button onClick={(event) => searchEvents(searchCost)}>Search</button>
+                </div>
+                <div>
+                    <label>Date:
+                        <input type="date"
+                            className="searchInput"
+                            onChange={(event) => {
+                                event.preventDefault()
+                                setSearchDate(event.target.value)
+                            }}
+                            placeholder="Free... " />
+                    </label>
+                    <button onClick={(event) => searchEvents(searchDate)}>Search</button>
+                </div>
             </div>
         </>
     )
