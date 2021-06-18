@@ -92,7 +92,6 @@ export const EventProvider = (props) => {
     }
 
     const unbookmarkEvent = eventId => {
-        console.log(eventId, "unbookmarked")
         return fetch(`http://localhost:8000/events/${eventId}/bookmark`, {
             method: "DELETE",
             headers: {
@@ -104,7 +103,6 @@ export const EventProvider = (props) => {
 
 
     const bookmarkEvent = eventId => {
-        console.log(eventId, "bookmarked")
         return fetch(`http://localhost:8000/events/${eventId}/bookmark`, {
             method: "POST",
             headers: {

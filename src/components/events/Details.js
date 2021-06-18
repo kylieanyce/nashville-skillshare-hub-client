@@ -80,7 +80,7 @@ export const EventDetails = () => {
 
                     <p><strong>Date: </strong>{moment(currentEvent.datetime).format("LL")}</p>
                     <p><strong>Time: </strong>{moment(currentEvent.datetime).format("LT")}</p>
-                    <p><strong>Cost: </strong>{currentEvent.cost}</p>
+                    <p><strong>Cost: $ </strong>{currentEvent.cost}</p>
                     <p style={{ textTransform: 'capitalize' }}><strong>Hosted By: </strong>{currentEvent.hostname}</p>
                     <p style={{ textTransform: 'capitalize' }}><strong>Location: </strong>{currentEvent.location}</p>
                     <p style={{ textTransform: 'capitalize' }}><strong>Address: </strong>{currentEvent.address}</p>
