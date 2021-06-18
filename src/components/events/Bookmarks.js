@@ -16,16 +16,14 @@ export const BookmarkList = () => {
             <SearchEvents />
             <div className="postList">
                 {events.map(event => {
-                    if (event.bookmarked === true) {
-                        return <EventCard key={event.id}
-                            id={event.id}
-                            description={event.description}
-                            title={event.title}
-                            cost={event.cost}
-                            datetime={event.datetime}
-                            host={event.hosts}
-                        />
-                    }
+                    return <EventCard key={event.id}
+                        id={event.id}
+                        description={event.description}
+                        title={event.title}
+                        cost={event.cost}
+                        datetime={event.datetime}
+                        host={event.hosts}
+                    />
                 })}
             </div>
         </section>

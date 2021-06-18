@@ -12,7 +12,7 @@ export const NavBar = (props) => {
                 <Link to="/events/myevents">My Events</Link>
             </li>
             <li className="navbar__item">
-                <Link to="/events/bookmark">Bookmarks</Link>
+                <Link to="/events/mybookmarks">Bookmarks</Link>
             </li>
             {
                 (localStorage.getItem("nssh_token") !== null) ?

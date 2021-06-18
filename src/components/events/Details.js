@@ -10,7 +10,6 @@ export const EventDetails = () => {
     const { eventId } = useParams();
     const history = useHistory();
     const modal = useRef();
-    const [isLoading, setIsLoading] = useState(true);
 
     // set post state variable
     const [currentEvent, setEvent] = useState({
@@ -21,8 +20,7 @@ export const EventDetails = () => {
         location: "",
         address: "",
         hostname: "",
-        hosts: 0,
-        organizers: true
+        hosts: 0
     });
 
     // grab post by ID from params and set post
@@ -44,12 +42,19 @@ export const EventDetails = () => {
     }
 
     const handleBookmark = () => {
-
         bookmarkEvent(eventId)
+            .then(() => getEventById(eventId)
+                .then((res) => {
+                    setEvent(res)
+                }))
     }
 
     const handleUnbookmark = () => {
         unbookmarkEvent(eventId)
+            .then(() => getEventById(eventId)
+                .then((res) => {
+                    setEvent(res)
+                }))
     }
 
     return (
