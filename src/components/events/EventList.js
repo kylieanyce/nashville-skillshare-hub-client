@@ -6,17 +6,33 @@ import { SearchEvents } from "./Search.js";
 
 
 export const EventList = (props) => {
-    const { events, getEvents } = useContext(EventContext)
+    const { events, setEvents, getEvents, searchTerms, getMyEvents } = useContext(EventContext)
     const history = useHistory();
+    const location = useLocation();
+    const [myEvents, setMyEvents] = useState(false);
 
     useEffect(() => {
-        getEvents()
-    }, []);
+        const currentPath = location.pathname;
+        if (currentPath.search("myevents") === -1) {
+            getEvents()
+        } else {
+            setMyEvents(true);
+            getMyEvents()
+        }
+    }, [location]);
+
+    // useEffect(() => {
+    //     if (searchTerms !== "") {
+    //         const subset = events.filter(event => event.description.toLowerCase().includes(searchTerms) || event.description.toLowerCase().includes(searchTerms))
+    //         setEvents(subset)
+    //     }
+    // }, [searchTerms])
 
     return (
         <>
+
             <div className="eventPosts">
-                <h2 className="neon">My Bookmarked Events</h2>
+                {myEvents ? <h2 className="neon">My Events</h2> : <h2 className="neon">Explore Upcoming Events</h2>}
                 <SearchEvents />
                 <div className="postList">
                     {events.map(event => {
@@ -27,7 +43,6 @@ export const EventList = (props) => {
                                         id={event.id}
                                         description={event.description}
                                         title={event.title}
-                                        cost={event.cost}
                                         datetime={event.datetime}
                                         host={event.hosts}
                                     />
@@ -35,10 +50,10 @@ export const EventList = (props) => {
                             )
                         }
                     })}
+
+                    {myEvents ? "" : <button onClick={() => history.push("/events/new")}>Add an Event</button>}
+
                 </div>
-
-                <button onClick={() => history.push("/events/new")}>Add an Event</button>
-
             </div>
         </>
     )

@@ -3,7 +3,6 @@ import { Route } from "react-router-dom"
 import { EventForm } from "./events/CreateEditForm"
 import { EventDetails } from "./events/Details"
 import { EventList } from "./events/EventList"
-import { MyEventList } from "./events/MyEvents"
 import { BookmarkList } from "./events/Bookmarks"
 import { EventProvider } from "./events/EventProvider"
 import { Home } from "./Home.js"
@@ -22,7 +21,7 @@ export const ApplicationViews = () => {
                     <EventList />
                 </Route>
                 <Route exact path="/events/myevents">
-                    <MyEventList />
+                    <EventList />
                 </Route>
                 <Route exact path="/events/mybookmarks">
                     <BookmarkList />
