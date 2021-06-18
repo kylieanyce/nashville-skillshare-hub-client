@@ -6,26 +6,17 @@ import { SearchEvents } from "./Search.js";
 
 
 export const EventList = (props) => {
-    const { events, getEvents, getMyEvents } = useContext(EventContext)
+    const { events, getEvents } = useContext(EventContext)
     const history = useHistory();
-    const location = useLocation();
-    const [myEvents, setMyEvents] = useState(false);
 
     useEffect(() => {
-        const currentPath = location.pathname;
-        if (currentPath.search("myevents") === -1) {
-            getEvents()
-        } else {
-            setMyEvents(true);
-            getMyEvents()
-        }
-    }, [location]);
+        getEvents()
+    }, []);
 
     return (
         <>
-
             <div className="eventPosts">
-                {myEvents ? <h2 className="neon">My Events</h2> : <h2 className="neon">Explore Upcoming Events</h2>}
+                <h2 className="neon">My Bookmarked Events</h2>
                 <SearchEvents />
                 <div className="postList">
                     {events.map(event => {
@@ -44,10 +35,10 @@ export const EventList = (props) => {
                             )
                         }
                     })}
-
-                    {myEvents ? "" : <button onClick={() => history.push("/events/new")}>Add an Event</button>}
-
                 </div>
+
+                <button onClick={() => history.push("/events/new")}>Add an Event</button>
+
             </div>
         </>
     )
