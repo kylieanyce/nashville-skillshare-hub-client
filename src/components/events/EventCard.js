@@ -17,6 +17,8 @@ export const EventCard = (event) => {
                     </Link>
                     <h4 style={{ textTransform: 'capitalize' }}>{event.hosts}</h4>
                     <h5>{moment(event.datetime).format('L')}</h5>
+                    <h5>{moment(event.datetime).format('LT')}</h5>
+                    <p>{event.cost}</p>
                     <p>{event.description}</p>
                 </div>
             </div>

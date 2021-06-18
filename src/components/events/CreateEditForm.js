@@ -49,7 +49,7 @@ export const EventForm = () => {
 
     return (
         <form className="eventForm">
-            <h2 className="eventForm__title">Add New Event</h2>
+            {eventId ? <h2 className="eventForm__title">Edit Event</h2> : <h2 className="eventForm__title">Add New Event</h2>}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="eventName">Name of Event: </label>
