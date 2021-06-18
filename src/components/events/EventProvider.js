@@ -82,6 +82,7 @@ export const EventProvider = (props) => {
     }
 
     const unbookmarkEvent = eventId => {
+        console.log(eventId, "unbookmarked")
         return fetch(`http://localhost:8000/events/${eventId}/signup`, {
             method: "DELETE",
             headers: {
@@ -93,7 +94,8 @@ export const EventProvider = (props) => {
 
 
     const bookmarkEvent = eventId => {
-        return fetch(`http://localhost:8000/events/${eventId}/signup`, {
+        console.log(eventId, "bookmarked")
+        return fetch(`http://localhost:8000/events/${eventId}/bookmark`, {
             method: "POST",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
