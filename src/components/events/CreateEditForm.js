@@ -83,7 +83,7 @@ export const EventForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="cost">Cost: </label>
-                    <input type="text" id="cost" name="cost" required autoFocus className="form-control"
+                    <input type="text" id="cost" name="cost" placeholder="Free or $..." required autoFocus className="form-control"
                         value={currentEvent.cost}
                         onChange={changeEventState}
                     />
@@ -93,7 +93,7 @@ export const EventForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="location">Location: </label>
-                    <input type="text" id="location" name="location" required autoFocus className="form-control"
+                    <input type="text" id="location" name="location" placeholder="Name of business" required autoFocus className="form-control"
                         value={currentEvent.location}
                         onChange={changeEventState}
                     />
@@ -103,7 +103,7 @@ export const EventForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="address">Address: </label>
-                    <input type="text" id="address" name="address" required autoFocus className="form-control"
+                    <input type="text" id="address" name="address" placeholder="123 Apple Ave" required autoFocus className="form-control"
                         value={currentEvent.address}
                         onChange={changeEventState}
                     />
@@ -113,7 +113,7 @@ export const EventForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="hostname">Hostname: </label>
-                    <input type="text" id="hostname" name="hostname" required autoFocus className="form-control"
+                    <input type="text" id="hostname" name="hostname" placeholder="Name of organizer" required autoFocus className="form-control"
                         value={currentEvent.hostname}
                         onChange={changeEventState}
                     />

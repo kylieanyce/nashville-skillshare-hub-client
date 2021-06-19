@@ -15,11 +15,11 @@ export const EventCard = (event) => {
                             {event.title}
                         </h3>
                     </Link>
-                    <h4 style={{ textTransform: 'capitalize' }}>{event.hosts}</h4>
-                    <h5>{moment(event.datetime).format('L')}</h5>
-                    <h5>{moment(event.datetime).format('LT')}</h5>
-                    <p>{event.cost}</p>
-                    <p>{event.description}</p>
+                    {/* <p style={{ textTransform: 'capitalize' }}><strong>Hosted By: </strong>{event.hosts}</p> */}
+                    <p><strong>Date:</strong> {moment(event.datetime).format('L')}</p>
+                    <p><strong>Time:</strong> {moment(event.datetime).format('LT')}</p>
+                    <p><strong>Cost:</strong> {event.cost}</p>
+                    <p><strong>Description:</strong> {event.description}</p>
                 </div>
             </div>
         </section >

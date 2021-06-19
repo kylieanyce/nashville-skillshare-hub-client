@@ -43,8 +43,9 @@ export const EventList = (props) => {
                                         id={event.id}
                                         description={event.description}
                                         title={event.title}
+                                        cost={event.cost}
                                         datetime={event.datetime}
-                                        host={event.hosts}
+                                    // hosts={event.hosts}
                                     />
                                 </>
                             )
