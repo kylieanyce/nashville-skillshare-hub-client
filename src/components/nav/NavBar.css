@@ -1,4 +1,4 @@
-Banner {
+.navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -10,7 +10,7 @@ Banner {
     padding-right: 1em;
 }
 
-.navbar__link {
+.navbar__item {
     flex: 1;
     white-space: nowrap;
 }
@@ -31,7 +31,7 @@ ul {
 }
 
 @media only screen and (max-width: 990px) {
-    Banner {
+    .navbar {
         font-size: 3em;
         margin: 0;
         padding: 0;
@@ -41,7 +41,7 @@ ul {
 }
 
 @media only screen and (max-width: 600px) {
-    Banner  {
+    .navbar  {
         font-size: .9em;
         font-weight: 400;
         margin: 0;
@@ -52,7 +52,7 @@ ul {
 }
 
 @media only screen and (max-width: 370px) {
-    Banner  {
+    .navbar  {
         font-size: .5em;
         font-weight: 200;
         margin: 0;
