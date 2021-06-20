@@ -4,15 +4,18 @@ import { ApplicationViews } from "./ApplicationViews"
 import { NavBar } from "./nav/NavBar"
 import { Register } from "./auth/Register"
 import { Login } from "./auth/Login"
-import moment from 'moment'
-
+import { Header } from "./Header.js";
+import { Footer } from "./Footer.js";
+import "./NashSSHub.css"
 export const NashSSHub = () => (
     <>
         <Route render={() => {
             if (localStorage.getItem("nssh_token")) {
                 return <>
                     <Route render={NavBar} />
+                    <Header />
                     <Route render={props => <ApplicationViews {...props} />} />
+                    <Footer />
                 </>
             } else {
                 return <Redirect to="/login" />

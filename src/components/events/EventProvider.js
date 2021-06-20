@@ -18,7 +18,6 @@ export const EventProvider = (props) => {
     }
 
     const searchEvents = (searchTerm) => {
-        console.log(searchTerm)
         return fetch(`http://localhost:8000/events?q=${searchTerm}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
@@ -27,6 +26,7 @@ export const EventProvider = (props) => {
             .then(response => response.json())
             .then(setEvents)
     }
+
 
     const getEventById = (id) => {
         return fetch(`http://localhost:8000/events/${id}`, {

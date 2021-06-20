@@ -1,0 +1,19 @@
+.neon {
+    text-align: center;
+}
+
+.eventList {
+    display: flex;
+    flex-direction: column;
+}
+
+.eventCards {
+    padding: 20px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 5px;
+    border: 1px #8A25B1 solid;
+    box-shadow: 0 0 2px 2px #8A25B1;
+}

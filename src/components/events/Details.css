@@ -1,0 +1,23 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.detailItem {
+    max-width: 60%;
+    text-align: left;
+    color: black;
+    line-height: 25px;
+    padding: 30px 30px 60px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px #8A25B1 solid;
+    box-shadow: 0 0 2px 2px #8A25B1;}
+
+.contentContainer {
+    padding-left: 30px;
+}
+
+h2 {
+    text-align: center;
+}

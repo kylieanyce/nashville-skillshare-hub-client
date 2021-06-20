@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from "react"
 import { EventContext } from "./EventProvider.js"
 import { EventCard } from "./EventCard.js"
-import { SearchEvents } from "./Search.js";
+import { SearchEvents } from "../bannerSearch/Search.js";
+import "./EventList.css"
+
 
 export const BookmarkList = () => {
     const { events, getMyBookmarks } = useContext(EventContext)
@@ -12,9 +14,9 @@ export const BookmarkList = () => {
 
     return (
         <section>
-            <h2 className="neon">My Bookmarked Events</h2>
             <SearchEvents />
-            <div className="postList">
+            <h2 className="neon">My Bookmarked Events</h2>
+            <div className="eventList">
                 {events.map(event => {
                     return <EventCard key={event.id}
                         id={event.id}
