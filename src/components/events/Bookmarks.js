@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from "react"
 import { EventContext } from "./EventProvider.js"
 import { EventCard } from "./EventCard.js"
 import { SearchEvents } from "../bannerSearch/Search.js";
+// import { Header } from "../Header.js";
+// import { Footer } from "../Footer.js";
 import "./EventList.css"
 
 
@@ -14,6 +16,7 @@ export const BookmarkList = () => {
 
     return (
         <section>
+            {/* <Header /> */}
             <SearchEvents />
             <h2 className="neon">My Bookmarked Events</h2>
             <div className="eventList">
@@ -28,6 +31,8 @@ export const BookmarkList = () => {
                     />
                 })}
             </div>
+            {/* <Footer /> */}
+
         </section>
     )
 }

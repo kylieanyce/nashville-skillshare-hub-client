@@ -1,12 +1,12 @@
 import React from "react"
-import "./Banner.css"
+import "./BannerImage.css"
 
 
 export const BannerImage = () => {
     return (
         <>
             <div className="bannerOverlay">
-                <div className="banner">
+                <div className="bannerimgContainer">
                     <img className="bannerimg" src="../banner.jpg" />
                 </div>
             </div>

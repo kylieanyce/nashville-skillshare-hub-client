@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react"
 import { EventContext } from "../events/EventProvider";
+import "./Search.css"
 
 // displays search bar
 export const SearchEvents = () => {
@@ -11,6 +12,9 @@ export const SearchEvents = () => {
     return (
         <>
             <div className="searchBar">
+                <div className="banner">
+                    <img className="bannerimg" src="../banner.jpg" />
+                </div>
                 <div>
                     <label>Cost:
                         <input type="text"

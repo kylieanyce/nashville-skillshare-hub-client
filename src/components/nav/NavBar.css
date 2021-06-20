@@ -7,17 +7,9 @@
     list-style: none;
     padding: 10px;
     font-weight: bold;
+    padding-right: 1em;
 }
-.search {
-    display: flex;
-    padding-right: 40px;
-    flex: 3;
-    justify-content: flex-end;
-}
-.searchInput {
-    width: 30em;
 
-}
 .navbar__link {
     flex: 1;
     white-space: nowrap;
@@ -37,4 +29,42 @@ ul {
     text-decoration: none;
     list-style: none;
     overflow-wrap: break-word;
+}
+
+@media only screen and (max-width: 990px) {
+    h1 {
+        font-size: 3em;
+        margin: 0;
+        padding: 0;
+        color: black;
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (max-width: 315px) {
+    .navbar  {
+        font-size: em;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        color: black;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 315px) {
+    .navbar  {
+        font-size: em;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        color: black;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }

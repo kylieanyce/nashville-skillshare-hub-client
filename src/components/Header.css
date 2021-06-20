@@ -5,8 +5,9 @@ header {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    height: 120px;
-    opacity: 0.9;
+    height: 5em;
+    text-align: center;
+    align-items: center;
 }
 h1 {
     margin: 0;
@@ -15,11 +16,25 @@ h1 {
     white-space: nowrap;
 	font-size: 5em;  
 	font-weight: 900;
+    /* text-align: center; */
 	
 }
-.titleContainer {
-    flex: 3;
+
+@media only screen and (max-width: 990px) {
+    h1 {
+        font-size: 3em;
+        margin: 0;
+        padding: 0;
+        color: black;
+        white-space: nowrap;
+    }
 }
-.title {
-    padding-right: 2em;
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+        margin: 0;
+        padding: 0;
+        color: black;
+    }
 }

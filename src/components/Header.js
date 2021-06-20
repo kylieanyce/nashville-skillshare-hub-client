@@ -7,7 +7,7 @@ export const Header = () => {
             <div className="headerOverlay">
                 <div className="header">
                     <header>
-                        <img className="logo" src="../logo.png" />
+                        {/* <img className="logo" src="../logo.png" alt="Nashville SkillShare Hub logo" /> */}
 
                         <div className="titleContainer"><h1 className="title">Nashville SkillShare Hub</h1></div>
                     </header>
