@@ -10,7 +10,6 @@ import { Home } from "./Home.js"
 export const ApplicationViews = () => {
     return <>
         <main style={{
-            margin: "5rem 2rem",
             lineHeight: "1.75rem"
         }}>
             <EventProvider>

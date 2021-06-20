@@ -4,6 +4,8 @@ import { EventCard } from "./EventCard.js"
 import { useHistory, useLocation } from 'react-router-dom';
 import { SearchEvents } from "../bannerSearch/Search.js";
 import { BannerImage } from "../bannerSearch/Banner.js"
+// import { Header } from "../Header.js";
+// import { Footer } from "../Footer.js";
 import "./EventList.css"
 
 
@@ -32,6 +34,8 @@ export const EventList = (props) => {
 
     return (
         <>
+            {/* <Header /> */}
+
 
             {/* <BannerImage /> */}
             <SearchEvents />
@@ -59,6 +63,8 @@ export const EventList = (props) => {
 
                 </div>
             </div>
+            {/* <Footer /> */}
+
         </>
     )
 }

@@ -6,7 +6,8 @@ import { Register } from "./auth/Register"
 import { Login } from "./auth/Login"
 import { Header } from "./Header.js";
 import { Footer } from "./Footer.js";
-import "./NashSSHub.css"
+
+
 export const NashSSHub = () => (
     <>
         <Route render={() => {

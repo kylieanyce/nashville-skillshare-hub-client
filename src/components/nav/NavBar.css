@@ -1,4 +1,4 @@
-.navbar {
+Banner {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -7,17 +7,9 @@
     list-style: none;
     padding: 10px;
     font-weight: bold;
+    padding-right: 1em;
 }
-.search {
-    display: flex;
-    padding-right: 40px;
-    flex: 3;
-    justify-content: flex-end;
-}
-.searchInput {
-    width: 30em;
 
-}
 .navbar__link {
     flex: 1;
     white-space: nowrap;
@@ -36,5 +28,37 @@ ul {
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    overflow-wrap: break-word;
+}
+
+@media only screen and (max-width: 990px) {
+    Banner {
+        font-size: 3em;
+        margin: 0;
+        padding: 0;
+        color: black;
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    Banner  {
+        font-size: .9em;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        color: black;
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    Banner  {
+        font-size: .5em;
+        font-weight: 200;
+        margin: 0;
+        padding: 0;
+        color: black;
+        white-space: nowrap;
+        overflow-wrap: break-word;
+    }
 }

@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from "react"
 import { useHistory, useParams } from "react-router-dom"
 import { EventContext } from "./EventProvider.js"
+// import { Header } from "../Header.js";
+// import { Footer } from "../Footer.js";
 
 
 export const EventForm = () => {
@@ -48,29 +50,32 @@ export const EventForm = () => {
     }
 
     return (
-        <form className="eventForm">
-            {eventId ? <h2 className="eventForm__title">Edit Event</h2> : <h2 className="eventForm__title">Add New Event</h2>}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="eventName">Name of Event: </label>
-                    <input type="text" id="title" name="title" required autoFocus className="form-control"
-                        value={currentEvent.title}
-                        onChange={changeEventState}
-                    />
-                </div>
-            </fieldset>
+        <>
+            {/* <Header /> */}
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="date">Date: </label>
-                    <input type="datetime-local" id="datetime" name="datetime" required autoFocus className="form-control"
-                        value={currentEvent.datetime}
-                        onChange={changeEventState}
-                    />
-                </div>
-            </fieldset>
+            <form className="eventForm">
+                {eventId ? <h2 className="eventForm__title">Edit Event</h2> : <h2 className="eventForm__title">Add New Event</h2>}
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="eventName">Name of Event: </label>
+                        <input type="text" id="title" name="title" required autoFocus className="form-control"
+                            value={currentEvent.title}
+                            onChange={changeEventState}
+                        />
+                    </div>
+                </fieldset>
 
-            {/* <fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="date">Date: </label>
+                        <input type="datetime-local" id="datetime" name="datetime" required autoFocus className="form-control"
+                            value={currentEvent.datetime}
+                            onChange={changeEventState}
+                        />
+                    </div>
+                </fieldset>
+
+                {/* <fieldset>
                 <div className="form-group">
                     <label htmlFor="time">Time: </label>
                     <input type="time" id="time" name="time" required autoFocus className="form-control"
@@ -80,57 +85,57 @@ export const EventForm = () => {
                 </div>
             </fieldset> */}
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="cost">Cost: </label>
-                    <input type="text" id="cost" name="cost" placeholder="Free or $..." required autoFocus className="form-control"
-                        value={currentEvent.cost}
-                        onChange={changeEventState}
-                    />
-                </div>
-            </fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="cost">Cost: </label>
+                        <input type="text" id="cost" name="cost" placeholder="Free or $..." required autoFocus className="form-control"
+                            value={currentEvent.cost}
+                            onChange={changeEventState}
+                        />
+                    </div>
+                </fieldset>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="location">Location: </label>
-                    <input type="text" id="location" name="location" placeholder="Name of business" required autoFocus className="form-control"
-                        value={currentEvent.location}
-                        onChange={changeEventState}
-                    />
-                </div>
-            </fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="location">Location: </label>
+                        <input type="text" id="location" name="location" placeholder="Name of business" required autoFocus className="form-control"
+                            value={currentEvent.location}
+                            onChange={changeEventState}
+                        />
+                    </div>
+                </fieldset>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="address">Address: </label>
-                    <input type="text" id="address" name="address" placeholder="123 Apple Ave" required autoFocus className="form-control"
-                        value={currentEvent.address}
-                        onChange={changeEventState}
-                    />
-                </div>
-            </fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="address">Address: </label>
+                        <input type="text" id="address" name="address" placeholder="123 Apple Ave" required autoFocus className="form-control"
+                            value={currentEvent.address}
+                            onChange={changeEventState}
+                        />
+                    </div>
+                </fieldset>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="hostname">Hostname: </label>
-                    <input type="text" id="hostname" name="hostname" placeholder="Name of organizer" required autoFocus className="form-control"
-                        value={currentEvent.hostname}
-                        onChange={changeEventState}
-                    />
-                </div>
-            </fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="hostname">Hostname: </label>
+                        <input type="text" id="hostname" name="hostname" placeholder="Name of organizer" required autoFocus className="form-control"
+                            value={currentEvent.hostname}
+                            onChange={changeEventState}
+                        />
+                    </div>
+                </fieldset>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="description">Event Description: </label>
-                    <input type="textarea" id="description" name="description" required autoFocus className="form-control"
-                        value={currentEvent.description}
-                        onChange={changeEventState}
-                    />
-                </div>
-            </fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="description">Event Description: </label>
+                        <input type="textarea" id="description" name="description" required autoFocus className="form-control"
+                            value={currentEvent.description}
+                            onChange={changeEventState}
+                        />
+                    </div>
+                </fieldset>
 
-            {/* <fieldset>
+                {/* <fieldset>
                 <div className="form-group">
                     <label htmlFor="gameId">Game: </label>
                     <select id="gameId" name="gameId" className="form-control"
@@ -145,43 +150,46 @@ export const EventForm = () => {
                     </select>
                 </div>
             </fieldset> */}
-            {
-                eventId
-                    ? <button
-                        onClick={evt => {
-                            evt.preventDefault()
-                            updateEvent({
-                                id: parseInt(eventId),
-                                title: currentEvent.title,
-                                datetime: currentEvent.datetime,
-                                cost: currentEvent.cost,
-                                location: currentEvent.location,
-                                address: currentEvent.address,
-                                hostname: currentEvent.hostname,
-                                description: currentEvent.description,
-                                hosts: currentUser
-                            })
-                                .then(() => history.push("/events"))
-                        }}
-                        className="btn btn-primary">Save Event</button>
-                    :
-                    <button
-                        onClick={evt => {
-                            evt.preventDefault()
-                            createEvent({
-                                title: currentEvent.title,
-                                datetime: currentEvent.datetime,
-                                cost: currentEvent.cost,
-                                location: currentEvent.location,
-                                address: currentEvent.address,
-                                hostname: currentEvent.hostname,
-                                description: currentEvent.description,
-                                hosts: currentUser
-                            })
-                                .then(() => history.push("/events"))
-                        }}
-                        className="btn btn-primary">Create Event</button>
-            }
-        </form>
+                {
+                    eventId
+                        ? <button
+                            onClick={evt => {
+                                evt.preventDefault()
+                                updateEvent({
+                                    id: parseInt(eventId),
+                                    title: currentEvent.title,
+                                    datetime: currentEvent.datetime,
+                                    cost: currentEvent.cost,
+                                    location: currentEvent.location,
+                                    address: currentEvent.address,
+                                    hostname: currentEvent.hostname,
+                                    description: currentEvent.description,
+                                    hosts: currentUser
+                                })
+                                    .then(() => history.push("/events"))
+                            }}
+                            className="btn btn-primary">Save Event</button>
+                        :
+                        <button
+                            onClick={evt => {
+                                evt.preventDefault()
+                                createEvent({
+                                    title: currentEvent.title,
+                                    datetime: currentEvent.datetime,
+                                    cost: currentEvent.cost,
+                                    location: currentEvent.location,
+                                    address: currentEvent.address,
+                                    hostname: currentEvent.hostname,
+                                    description: currentEvent.description,
+                                    hosts: currentUser
+                                })
+                                    .then(() => history.push("/events"))
+                            }}
+                            className="btn btn-primary">Create Event</button>
+                }
+            </form>
+            {/* <Footer /> */}
+
+        </>
     )
 }

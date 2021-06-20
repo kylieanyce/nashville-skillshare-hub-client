@@ -1,0 +1,31 @@
+.banner {
+    max-width: 110em;
+    position: relative;
+}
+
+.bannerimg {
+    object-fit: fill;
+    max-width: 115em;
+    text-align: center;
+}
+
+@media only screen and (max-width: 990px) {
+    .bannerimg {
+        max-width: 60em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .bannerimg {
+        max-width: 35rem;
+        
+    }
+
+}
+@media only screen and (max-width: 400px) {
+    .bannerimg {
+        max-width: 23rem;
+        
+    }
+}
+

@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState, useRef } from "react"
 import { useParams, useHistory } from "react-router-dom"
 import { EventContext } from "./EventProvider";
 import moment from "moment"
+// import { Header } from "../Header.js";
+// import { Footer } from "../Footer.js";
 import "./Details.css"
 
 
@@ -59,6 +61,8 @@ export const EventDetails = () => {
 
     return (
         <section>
+            {/* <Header /> */}
+
             <h2 className="neon">Event Details</h2>
             <div className="details">
                 <div className="detailItem">
@@ -106,6 +110,8 @@ export const EventDetails = () => {
 
                 </div>
             </div>
+            {/* <Footer /> */}
+
         </section >
     )
 
