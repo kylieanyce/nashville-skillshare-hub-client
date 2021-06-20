@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react"
-import { EventContext } from "./EventProvider";
+import { EventContext } from "../events/EventProvider";
 
 // displays search bar
 export const SearchEvents = () => {

@@ -27,6 +27,7 @@ export const EventProvider = (props) => {
             .then(setEvents)
     }
 
+
     const getEventById = (id) => {
         return fetch(`http://localhost:8000/events/${id}`, {
             headers: {

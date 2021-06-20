@@ -1,5 +1,5 @@
-body {
-    font-family: 'Work Sans', sans-serif;
+#bannerimg {
     background-position: center center;
     background-attachment: fixed;
+    background-color: blue;
 }

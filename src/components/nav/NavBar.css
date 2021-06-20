@@ -1,10 +1,40 @@
 .navbar {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F09116;
+    list-style: none;
+    padding: 10px;
+    font-weight: bold;
 }
+.search {
+    display: flex;
+    padding-right: 40px;
+    flex: 3;
+    justify-content: flex-end;
+}
+.searchInput {
+    width: 30em;
 
-.navbar__item {
-    flex-basis: 20%;
-    list-style-type: none;
+}
+.navbar__link {
+    flex: 1;
+    white-space: nowrap;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: underline;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    overflow-wrap: break-word;
 }
