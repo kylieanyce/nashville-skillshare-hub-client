@@ -12,32 +12,36 @@ export const SearchEvents = () => {
     return (
         <>
             <div className="searchBar">
-                <div className="banner">
-                    <img className="bannerimg" src="../banner.jpg" />
-                </div>
-                <div>
-                    <label>Cost:
-                        <input type="text"
-                            className="searchInput"
-                            onChange={(event) => {
-                                event.preventDefault()
-                                setSearchCost(event.target.value)
-                            }}
-                            placeholder="Free... " />
-                    </label>
-                    <button onClick={(event) => searchEvents(searchCost)}>Search</button>
-                </div>
-                <div>
-                    <label>Date:
-                        <input type="date"
-                            className="searchInput"
-                            onChange={(event) => {
-                                event.preventDefault()
-                                setSearchDate(event.target.value)
-                            }}
-                            placeholder="Free... " />
-                    </label>
-                    <button onClick={(event) => searchEvents(searchDate)}>Search</button>
+                <div className="searchInputTransparent">
+                    <div className="banner">
+                        <img className="bannerimg" src="../banner.jpg" />
+                    </div>
+                    <div className="inputFields">
+                        <div>
+                            <label>Cost:
+                                <input type="text"
+                                    className="searchInput"
+                                    onChange={(event) => {
+                                        event.preventDefault()
+                                        setSearchCost(event.target.value)
+                                    }}
+                                    placeholder="Free... " />
+                            </label>
+                            <button onClick={(event) => searchEvents(searchCost)}>Search</button>
+                        </div>
+                        <div>
+                            <label>Date:
+                                <input type="date"
+                                    className="searchInput"
+                                    onChange={(event) => {
+                                        event.preventDefault()
+                                        setSearchDate(event.target.value)
+                                    }}
+                                    placeholder="Free... " />
+                            </label>
+                            <button onClick={(event) => searchEvents(searchDate)}>Search</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
