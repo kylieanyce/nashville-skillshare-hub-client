@@ -1,17 +1,3 @@
-/* .banner {
-    max-width: 100%;
-    height: 200px;
-    position: absolute;
-    z-index: -9999;
-
-}
-
-.bannerimg {
-    object-fit: fill;
-    max-width: 100%;
-    text-align: center;
-} */
-
 .searchBar {
     background-image: url(../images/longest.jpg);
     background-size: cover;
@@ -24,45 +10,145 @@
 .inputFields {
     text-align: center;
     position: relative;
-    top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    padding-top: 35%;
+    padding-top: 10em;
+}
+
+.inputs{
+    background-color: white;
+    padding: .5em;
+    margin-right: 32em;
+    margin-left: 32em;
+    border-radius: 30px;
+    display: flex;
+}
+
+.inputdiv {
+    padding: 0 10px;
+}
+
+.searchInput {
+    width: 25em;
+}
+
+.inputbutton:hover {
+    border-radius: 30px;
+    box-shadow: 0 0 2px 1px #8A25B1;
+}
+
+
+
+
+
+@media only screen and (max-width: 1295px) {
+    .inputs {
+        margin-right: 30em;
+        margin-left: 30em;    
+    }
+    .searchInput {
+        width: 18em;
+    }
+}
+@media only screen and (max-width: 1215px) {
+    .inputs {
+        margin-right: 25em;
+        margin-left: 25em;    
+    }
+    .searchInput {
+        width: 25em;
+    }
+}
+@media only screen and (max-width: 1120px) {
+    .inputs {
+        margin-right: 22em;
+        margin-left: 22em;    
+    }
+    .searchInput {
+        width: 25em;
+    }
+}
+@media only screen and (max-width: 1015px) {
+    .inputs {
+        margin-right: 19em;
+        margin-left: 19em;    
+    }
+    .searchInput {
+        width: 23em;
+    }
+}
+@media only screen and (max-width: 925px) {
+    .inputs {
+        margin-right: 16em;
+        margin-left: 16em;    
+    }
+    .searchInput {
+        width: 21em;
+    }
+}
+@media only screen and (max-width: 830px) {
+    .inputs {
+        margin-right: 13em;
+        margin-left: 13em;    
+    }
+    .searchInput {
+        width: 18em;
+    }
+}
+@media only screen and (max-width: 730px) {
+    .inputs {
+        margin-right: 10em;
+        margin-left: 10em;    
+    }
+    .searchInput {
+        width: 15em;
+    }
+}
+@media only screen and (max-width: 635px) {
+    .inputs {
+        margin-right: 7em;
+        margin-left: 7em;    
+    }
+    .searchInput {
+        width: 13em;
+    }
+}
+@media only screen and (max-width: 545px) {
+    .inputs {
+        margin-right: 7em;
+        margin-left: 7em;    
+    }
+    .searchInput {
+        width: 10em;
+    }
 }
 
 @media only screen and (max-width: 990px) {
     .searchBar {
         height: 45vh;
     }
-    /* .inputFields {
-        padding: 22%;
-    } */
 }
 
 @media only screen and (max-width: 680px) {
     .searchBar {
         height: 35vh;
     }
-    /* .inputFields {
-        padding: 20%;
-    } */
+    .inputFields {
+        padding-top: 7em;
+    }
 }
 @media only screen and (max-width: 480px) {
     .searchBar {
         height: 25vh;
     }
-    /* .eventList {
-        padding-top: 22%;
-    } */
+    .inputs {
+        margin-right: 5em;
+        margin-left: 5em;
+        font-size: small;
+        padding: 1px;
+    }
+    .inputFields {
+        padding-top: 5em;
+    }
+    .searchInput {
+        width: 8em;
+    }
 }
-@media only screen and (max-width: 400px) {
-    /* .eventList {
-        padding-top: 22%;
-    } */
-}
-@media only screen and (max-width: 360px) {
-    /* .eventList {
-        padding-top: 22%;
-    } */
-}
-
