@@ -59,7 +59,7 @@ export const EventList = (props) => {
                         }
                     })}
 
-                    {myEvents ? "" : <button onClick={() => history.push("/events/new")}>Add an Event</button>}
+                    {myEvents ? "" : <button className="addButton" onClick={() => history.push("/events/new")}>Add an Event</button>}
 
                 </div>
             </div>

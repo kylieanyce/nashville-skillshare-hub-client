@@ -29,6 +29,14 @@
     box-shadow: 0 0 2px 1px #8A25B1;
 }
 
+.addButton {
+    margin: 0 100px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px #8A25B1;
+    background-color: #d1a3e3;
+    border: none;
+}
+
 a {
     color: black;
     text-decoration: none;
