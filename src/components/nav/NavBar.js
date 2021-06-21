@@ -3,36 +3,24 @@ import { Link } from "react-router-dom"
 import "./NavBar.css"
 
 export const NavBar = (props) => {
+    const myFunction = (event) => {
+        event.preventDefault()
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+
     return (
-        <ul className="navbar">
-            <li className="navbar__item">
-                <Link to="/events">Home</Link>
-            </li>
-            <li className="navbar__item">
-                <Link to="/events/myevents">My Events</Link>
-            </li>
-            <li className="navbar__item">
-                <Link to="/events/mybookmarks">Bookmarks</Link>
-            </li>
-            {
-                (localStorage.getItem("nssh_token") !== null) ?
-                    <li className="nav-item">
-                        <button className="nav-link fakeLink"
-                            onClick={() => {
-                                localStorage.removeItem("nssh_token")
-                                props.history.push({ pathname: "/" })
-                            }}
-                        >Logout</button>
-                    </li> :
-                    <>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/login">Login</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/register">Register</Link>
-                        </li>
-                    </>
-            }
-        </ul>
+        <div className="navbar" id="myTopnav">
+            <Link to="/" className="active">Home</Link>
+            <Link to="/events/myevents" className="active">My Events</Link>
+            <Link to="/events/mybookmarks" className="active">Bookmarks</Link>
+            <a className="icon" onClick={myFunction}>
+                <i className="fa fa-bars"></i>
+            </a>
+        </div>
     )
 }
