@@ -1,6 +1,8 @@
 .banner {
     max-width: 100%;
-    position: relative;
+    position: absolute;
+    z-index: -9999;
+
 }
 
 .bannerimg {
@@ -9,23 +11,33 @@
     text-align: center;
 }
 
+.inputFields {
+    padding: 25%;
+}
+
 @media only screen and (max-width: 990px) {
     .bannerimg {
         max-width: 100%;
+    }
+    .inputFields {
+        padding: 22%;
     }
 }
 
 @media only screen and (max-width: 600px) {
     .bannerimg {
         max-width: 100%;
-        
     }
-
+    .inputFields {
+        padding: 17%;
+    }
 }
 @media only screen and (max-width: 400px) {
     .bannerimg {
         max-width: 100%;
-        
+    }
+    .inputFields {
+        padding: 14%;
     }
 }
 

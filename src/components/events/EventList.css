@@ -1,5 +1,7 @@
 .neon {
     text-align: center;
+    background-color: #F09116;
+    padding: 1em;
 }
 
 .eventList {
@@ -14,6 +16,30 @@
     flex-direction: column;
     text-align: left;
     border-radius: 5px;
-    border: 1px #8A25B1 solid;
-    box-shadow: 0 0 2px 2px #8A25B1;
+    box-shadow: 0 0 2px 1px #8A25B1;
+}
+
+.cardHeader {
+    margin: auto;
+    padding-left: 1.5%;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px #8A25B1;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.cardHeader:hover {
+    background-color: #d1a3e3;
+}
+
+@media screen and (max-width: 360px) {
+    .cardHeader {
+        background-color: #d1a3e3;
+    }
+    .eventCards {
+        font-size: small;
+    }
 }
