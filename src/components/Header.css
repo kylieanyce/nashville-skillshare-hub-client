@@ -5,7 +5,7 @@ header {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    height: 5em;
+    height: 9em;
     text-align: center;
     align-items: center;
 }
@@ -28,6 +28,10 @@ h1 {
         color: black;
         white-space: nowrap;
     }
+    header {
+        height: 7em;
+    }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -37,4 +41,8 @@ h1 {
         padding: 0;
         color: black;
     }
+    header {
+        height: 3em;
+    }
+   
 }
