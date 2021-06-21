@@ -40,6 +40,14 @@ h2 {
     padding: 5px;
 }
 
+dialog {
+    border: #8A25B1;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px #8A25B1;
+    background-color: #d1a3e3;
+    margin: 250px 50px;
+}
+
 @media screen and (max-width: 360px) {
     .detailItem {
         font-size: small;
