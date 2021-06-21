@@ -1,5 +1,6 @@
-.banner {
+/* .banner {
     max-width: 100%;
+    height: 200px;
     position: absolute;
     z-index: -9999;
 
@@ -9,35 +10,52 @@
     object-fit: fill;
     max-width: 100%;
     text-align: center;
+} */
+
+.searchBar {
+    background-image: url(../images/longest.jpg);
+    background-size: cover;
+    max-width: 100%;
+    height: 50vh;
 }
 
 .inputFields {
-    padding: 25%;
+    padding: 10em;
 }
 
 @media only screen and (max-width: 990px) {
-    .bannerimg {
-        max-width: 100%;
+    .searchBar {
+        height: 45vh;
     }
-    .inputFields {
+    /* .inputFields {
         padding: 22%;
-    }
+    } */
 }
 
-@media only screen and (max-width: 600px) {
-    .bannerimg {
-        max-width: 100%;
+@media only screen and (max-width: 680px) {
+    .searchBar {
+        height: 35vh;
     }
-    .inputFields {
-        padding: 17%;
+    /* .inputFields {
+        padding: 20%;
+    } */
+}
+@media only screen and (max-width: 480px) {
+    .searchBar {
+        height: 25vh;
     }
+    /* .eventList {
+        padding-top: 22%;
+    } */
 }
 @media only screen and (max-width: 400px) {
-    .bannerimg {
-        max-width: 100%;
-    }
-    .inputFields {
-        padding: 14%;
-    }
+    /* .eventList {
+        padding-top: 22%;
+    } */
+}
+@media only screen and (max-width: 360px) {
+    /* .eventList {
+        padding-top: 22%;
+    } */
 }
 

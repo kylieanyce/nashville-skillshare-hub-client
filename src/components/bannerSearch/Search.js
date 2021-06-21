@@ -13,9 +13,9 @@ export const SearchEvents = () => {
         <>
             <div className="searchBar">
                 <div className="searchInputTransparent">
-                    <div className="banner">
+                    {/* <div className="banner">
                         <img className="bannerimg" src="../banner.jpg" />
-                    </div>
+                    </div> */}
                     <div className="inputFields">
                         <div>
                             <label>Cost:
