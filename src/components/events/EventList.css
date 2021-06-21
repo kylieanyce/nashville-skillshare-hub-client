@@ -1,5 +1,7 @@
 .neon {
     text-align: center;
+    background-color: #F09116;
+    padding: 1em;
 }
 
 .eventList {
@@ -31,4 +33,13 @@ a {
 
 .cardHeader:hover {
     background-color: #d1a3e3;
+}
+
+@media screen and (max-width: 360px) {
+    .cardHeader {
+        background-color: #d1a3e3;
+    }
+    .eventCards {
+        font-size: small;
+    }
 }
