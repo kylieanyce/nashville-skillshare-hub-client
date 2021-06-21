@@ -1,0 +1,18 @@
+.eventForm__title {
+    text-align: center;
+    background-color: #F09116;
+    padding: 1em;
+    margin: 0;
+}
+
+.form-group {
+    padding: 15px 25px;
+}
+
+.saveButtonContainer {
+    margin: 0 100px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px #8A25B1;
+    background-color: #d1a3e3;
+    border: none;
+}
