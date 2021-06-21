@@ -10,7 +10,7 @@ import { Home } from "./Home.js"
 export const ApplicationViews = () => {
     return <>
         <main style={{
-            // lineHeight: "1.75rem"
+            lineHeight: "1.25rem"
         }}>
             <EventProvider>
                 <Route exact path="/">

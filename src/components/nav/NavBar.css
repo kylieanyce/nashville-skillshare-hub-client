@@ -28,8 +28,10 @@
   }
   
   /* Hide the link that should open and close the topnav on small screens */
-  .topnav .icon {
-    display: none;
+  @media screen and (min-width: 768px) {
+    .topnav a.icon {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 600px) {
@@ -53,86 +55,3 @@
       text-align: left;
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #F09116;
-    list-style: none;
-    padding: 10px;
-    font-weight: bold;
-    padding-right: 1em;
-}
-
-.navbar__item {
-    flex: 1;
-    white-space: nowrap;
-}
-a {
-    text-decoration: none;
-    color: black;
-}
-a:hover {
-    text-decoration: underline;
-}
-ul {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-}
-
-@media only screen and (max-width: 990px) {
-    .navbar {
-        font-size: 100%;
-        margin: 0;
-        padding: 0;
-        color: black;
-        white-space: nowrap;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .navbar  {
-        font-size: 100%;
-        font-weight: 400;
-        margin: 0;
-        padding: 0;
-        color: black;
-        white-space: nowrap;
-    }
-}
-
-@media only screen and (max-width: 370px) {
-    .navbar  {
-        font-size: 80%;
-        font-weight: 400;
-        margin: 0;
-        padding: 0;
-        color: black;
-        white-space: nowrap;
-        overflow-wrap: break-word;
-    }
-} */
