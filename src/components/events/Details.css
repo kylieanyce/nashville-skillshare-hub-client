@@ -11,8 +11,8 @@
     padding: 30px;
     margin: 10px;
     border-radius: 5px;
-    border: 1px #8A25B1 solid;
-    box-shadow: 0 0 2px 2px #8A25B1;}
+    box-shadow: 0 0 2px 1px #8A25B1;
+}
 
 
 h2 {

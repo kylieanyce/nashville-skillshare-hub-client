@@ -11,7 +11,7 @@ export const EventCard = (event) => {
                 <div className="eventHeader">
                     {/* This makes the image a clickable link to take user to details page */}
                     <Link to={`/events/detail/${event.id}`}>
-                        <h3 style={{ textTransform: 'capitalize' }}>
+                        <h3 className="cardHeader" style={{ textTransform: 'capitalize' }}>
                             {event.title}
                         </h3>
                     </Link>
