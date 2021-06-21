@@ -42,7 +42,6 @@ export const Login = props => {
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Nashville SkillShare Hub</h1>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="username"> Username </label>
