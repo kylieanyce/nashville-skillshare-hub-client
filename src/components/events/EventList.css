@@ -2,7 +2,9 @@
     text-align: center;
     background-color: #F09116;
     padding: 1em;
+    margin: 0;
 }
+
 
 .eventList {
     display: flex;

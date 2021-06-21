@@ -14,7 +14,7 @@ export const NavBar = (props) => {
     }
 
     return (
-        <div className="navbar" id="myTopnav">
+        <div className="navbar topnav" id="myTopnav">
             <Link to="/" className="active">Home</Link>
             <Link to="/events/myevents" className="active">My Events</Link>
             <Link to="/events/mybookmarks" className="active">Bookmarks</Link>

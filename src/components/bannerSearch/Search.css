@@ -3,23 +3,26 @@
     background-size: cover;
     background-position: center;
     position: relative; 
-    max-width: 100%;
-    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+
 }
 
 .inputFields {
     text-align: center;
     position: relative;
-    padding-top: 10em;
 }
 
 .inputs{
     background-color: white;
-    padding: .5em;
-    margin-right: 32em;
-    margin-left: 32em;
+    margin: 5px 20px;
+    padding: 3px;
     border-radius: 30px;
     display: flex;
+    justify-content: space-between;
 }
 
 .inputdiv {
@@ -27,7 +30,7 @@
 }
 
 .searchInput {
-    width: 25em;
+    width: 50%;
 }
 
 .inputbutton:hover {
@@ -39,116 +42,41 @@
 
 
 
-@media only screen and (max-width: 1295px) {
+@media only screen and (min-width: 1440px) {
     .inputs {
-        margin-right: 25em;
-        margin-left: 25em;    
+        /* margin-right: 25em;
+        margin-left: 25em;     */
     }
     .searchInput {
         width: 15em;
     }
 }
-@media only screen and (max-width: 1215px) {
+
+@media only screen and (min-width: 1024px) {
     .inputs {
-        margin-right: 25em;
-        margin-left: 25em;    
-    }
-    .searchInput {
-        width: 25em;
-    }
-}
-@media only screen and (max-width: 1120px) {
-    .inputs {
-        margin-right: 22em;
-        margin-left: 22em;    
-    }
-    .searchInput {
-        width: 25em;
-    }
-}
-@media only screen and (max-width: 1015px) {
-    .inputs {
-        margin-right: 19em;
-        margin-left: 19em;    
+        /* margin-right: 19em;
+        margin-left: 19em;     */
     }
     .searchInput {
         width: 23em;
     }
 }
-@media only screen and (max-width: 925px) {
+
+@media only screen and (min-width: 768px) {
     .inputs {
-        margin-right: 16em;
-        margin-left: 16em;    
-    }
-    .searchInput {
-        width: 21em;
-    }
-}
-@media only screen and (max-width: 830px) {
-    .inputs {
-        margin-right: 13em;
-        margin-left: 13em;    
-    }
-    .searchInput {
-        width: 18em;
-    }
-}
-@media only screen and (max-width: 730px) {
-    .inputs {
-        margin-right: 10em;
-        margin-left: 10em;    
+        /* margin-right: 10em;
+        margin-left: 10em;     */
     }
     .searchInput {
         width: 15em;
     }
 }
-@media only screen and (max-width: 635px) {
+@media only screen and (min-width: 425px) {
     .inputs {
-        margin-right: 7em;
-        margin-left: 7em;    
+        /* margin-right: 7em;
+        margin-left: 7em;     */
     }
     .searchInput {
         width: 13em;
-    }
-}
-@media only screen and (max-width: 545px) {
-    .inputs {
-        margin-right: 7em;
-        margin-left: 7em;    
-    }
-    .searchInput {
-        width: 10em;
-    }
-}
-
-@media only screen and (max-width: 990px) {
-    .searchBar {
-        height: 45vh;
-    }
-}
-
-@media only screen and (max-width: 680px) {
-    .searchBar {
-        height: 35vh;
-    }
-    .inputFields {
-        padding-top: 7em;
-    }
-}
-@media only screen and (max-width: 480px) {
-    .searchBar {
-        height: 25vh;
-    }
-    .inputs {
-        margin-right: 5em;
-        margin-left: 5em;
-        font-size: small;
-        padding: 1px;
-    }
-    .inputFields {
-        padding-top: 5em;
-    }
-    .searchInput {
-        width: 8em;
     }
 }
