@@ -1,12 +1,11 @@
 header {
     margin: 0;
-    padding: 0;
+    padding-left: 1em;
     position: sticky;
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
     width: 100%;
     height: 9em;
-    text-align: center;
     align-items: center;
 }
 h1 {
@@ -15,12 +14,11 @@ h1 {
     color: black;
     white-space: nowrap;
 	font-size: 5em;  
-	font-weight: 900;
-    /* text-align: center; */
-	
+	font-weight: bolder;
+    font-family: 'Share Tech Mono', monospace;	
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 1070px) {
     h1 {
         font-size: 3em;
         margin: 0;
@@ -34,7 +32,7 @@ h1 {
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
     h1 {
         font-size: 1.5em;
         margin: 0;

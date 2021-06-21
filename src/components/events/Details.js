@@ -68,18 +68,18 @@ export const EventDetails = () => {
                 <div className="detailItem">
                     {currentEvent.bookmarked ?
                         <div className="bookmark" onClick={handleUnbookmark} >
-                            <svg pointerEvents="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bookmark-x-fill" viewBox="0 0 16 16">
+                            <svg pointerEvents="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bookmarkItem bi bi-bookmark-x-fill" viewBox="0 0 16 16">
                                 <path pointerEvents="auto" fillRule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM6.854 5.146a.5.5 0 1 0-.708.708L7.293 7 6.146 8.146a.5.5 0 1 0 .708.708L8 7.707l1.146 1.147a.5.5 0 1 0 .708-.708L8.707 7l1.147-1.146a.5.5 0 0 0-.708-.708L8 6.293 6.854 5.146z" />
                             </svg>
-                            <h2 style={{ textTransform: 'capitalize' }}>{currentEvent.title}</h2>
+                            <h2 className="bookmarkItem" style={{ textTransform: 'capitalize' }}>{currentEvent.title}</h2>
                         </div>
                         :
                         <div className="bookmark" onClick={handleBookmark} >
-                            <svg pointerEvents="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bookmark-star" viewBox="0 0 16 16">
+                            <svg pointerEvents="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bookmarkItem bi bi-bookmark-star" viewBox="0 0 16 16">
                                 <path pointerEvents="auto" d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z" />
                                 <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
                             </svg>
-                            <h2 style={{ textTransform: 'capitalize' }}>{currentEvent.title}</h2>
+                            <h2 className="bookmarkItem" style={{ textTransform: 'capitalize' }}>{currentEvent.title}</h2>
                         </div>
                     }
 
