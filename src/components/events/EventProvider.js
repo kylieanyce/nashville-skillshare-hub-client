@@ -8,7 +8,7 @@ export const EventProvider = (props) => {
 
 
     const getEvents = () => {
-        return fetch(`http://localhost:8000/events`, {
+        return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
             }
@@ -18,7 +18,7 @@ export const EventProvider = (props) => {
     }
 
     const searchEvents = (searchTerm) => {
-        return fetch(`http://localhost:8000/events?q=${searchTerm}`, {
+        return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events?q=${searchTerm}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
             }
@@ -28,7 +28,7 @@ export const EventProvider = (props) => {
     }
 
     const searchDate = (searchDate) => {
-        return fetch(`http://localhost:8000/events?date=${searchDate}`, {
+        return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events?date=${searchDate}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
             }
@@ -38,7 +38,7 @@ export const EventProvider = (props) => {
     }
 
     const getEventById = (id) => {
-        return fetch(`http://localhost:8000/events/${id}`, {
+        return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events/${id}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
             }
@@ -47,7 +47,7 @@ export const EventProvider = (props) => {
     }
 
     const getMyEvents = () => {
-        return fetch(`http://localhost:8000/events/myevents`, {
+        return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events/myevents`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
             }
@@ -57,7 +57,7 @@ export const EventProvider = (props) => {
     }
 
     const getMyBookmarks = () => {
-        return fetch(`http://localhost:8000/events/mybookmarks`, {
+        return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events/mybookmarks`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
             }
@@ -67,7 +67,7 @@ export const EventProvider = (props) => {
     }
 
     const createEvent = (event) => {
-        return fetch("http://localhost:8000/events", {
+        return fetch("https://nashville-skillshare-hub-serve.herokuapp.com/events", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -80,7 +80,7 @@ export const EventProvider = (props) => {
     }
 
     const updateEvent = (event) => {
-        return fetch(`http://localhost:8000/events/${event.id}`, {
+        return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events/${event.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -92,7 +92,7 @@ export const EventProvider = (props) => {
     }
 
     const deleteEvent = (id) => {
-        return fetch(`http://localhost:8000/events/${id}`, {
+        return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events/${id}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
@@ -102,7 +102,7 @@ export const EventProvider = (props) => {
     }
 
     const unbookmarkEvent = eventId => {
-        return fetch(`http://localhost:8000/events/${eventId}/bookmark`, {
+        return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events/${eventId}/bookmark`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
@@ -113,7 +113,7 @@ export const EventProvider = (props) => {
 
 
     const bookmarkEvent = eventId => {
-        return fetch(`http://localhost:8000/events/${eventId}/bookmark`, {
+        return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events/${eventId}/bookmark`, {
             method: "POST",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
