@@ -11,7 +11,7 @@ export const Login = props => {
     const handleLogin = (e) => {
         e.preventDefault()
 
-        return fetch("http://127.0.0.1:8000/login", {
+        return fetch("https://nashville-skillshare-hub-serve.herokuapp.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
