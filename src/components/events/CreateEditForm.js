@@ -166,7 +166,7 @@ export const EventForm = () => {
                                     .then(() => history.push("/events"))
                             }}
 
-                            lassName="addButton btn btn-primary">Save Event</button></div>
+                            className="addButton btn btn-primary">Save Event</button></div>
                         :
                         <div className="saveButtonContainer"><button
                             onClick={evt => {
