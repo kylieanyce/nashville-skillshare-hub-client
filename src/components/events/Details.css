@@ -46,12 +46,12 @@ dialog {
     border-radius: 5px;
     box-shadow: 0 0 2px 1px #8A25B1;
     background-color: white;
-    margin: 250px 50px;
+    position: relative;
 }
 
 .deleteButtonContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .deleteButton {
@@ -59,7 +59,12 @@ dialog {
     box-shadow: 0 0 2px 1px #8A25B1;
     background-color: #d1a3e3;
     border: none;
-
+}
+.editButton {
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px #8A25B1;
+    background-color: #d1a3e3;
+    border: none;
 }
 .cancelButton {
     border-radius: 5px;
