@@ -41,6 +41,9 @@ export const EventList = (props) => {
             <SearchEvents />
             <div className="eventPosts">
                 {myEvents ? <h2 className="neon">My Events</h2> : <h2 className="neon">Explore Upcoming Events</h2>}
+                <div className="addContainer">
+                    {myEvents ? "" : <button className="addButton" onClick={() => history.push("/events/new")}>Add an Event</button>}
+                </div>
                 <div className="eventList">
                     {events.map(event => {
                         {
@@ -58,9 +61,6 @@ export const EventList = (props) => {
                             )
                         }
                     })}
-                    <div className="addContainer">
-                        {myEvents ? "" : <button className="addButton" onClick={() => history.push("/events/new")}>Add an Event</button>}
-                    </div>
                 </div>
             </div>
             {/* <Footer /> */}
