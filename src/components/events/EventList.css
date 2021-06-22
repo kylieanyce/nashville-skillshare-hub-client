@@ -2,11 +2,14 @@
     text-align: center;
     background-color: #F09116;
     padding: 1em;
+    margin: 0;
 }
+
 
 .eventList {
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 
 .eventCards {
@@ -26,6 +29,19 @@
     box-shadow: 0 0 2px 1px #8A25B1;
 }
 
+.addContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.addButton {
+    margin: 20px 100px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px #8A25B1;
+    background-color: #d1a3e3;
+    border: none;
+}
+
 a {
     color: black;
     text-decoration: none;
@@ -35,7 +51,8 @@ a {
     background-color: #d1a3e3;
 }
 
-@media screen and (max-width: 360px) {
+
+@media screen and (max-width: 768px) {
     .cardHeader {
         background-color: #d1a3e3;
     }

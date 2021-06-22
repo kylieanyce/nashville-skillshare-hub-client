@@ -92,20 +92,21 @@ export const EventDetails = () => {
                     <p style={{ textTransform: 'capitalize' }}><strong>Address: </strong>{currentEvent.address}</p>
                     <p><strong>Event Description: </strong>{currentEvent.description}</p>
                     {currentEvent.organizers ?
-                        <div>
-                            <button onClick={handleModal}> Delete </button>
-                            <button onClick={() => history.push(`/events/${currentEvent.id}/edit`)}> Edit </button >
+                        <div className="deleteButtonContainer">
+                            <button className="deleteButton" onClick={handleModal}> Delete </button>
+                            <button className="editButton" onClick={() => history.push(`/events/${currentEvent.id}/edit`)}> Edit </button >
                         </div>
                         : ""}
                     <dialog className="guardRailModal" ref={modal}>
                         <h3>Delete</h3>
                         <p>Are you sure you want to delete this event? </p>
-                        <button onClick={handleDelete}>Delete</button>
+                        <div className="deleteButtonContainer"><button className="deleteButton" onClick={handleDelete}>Delete</button>
 
-                        <button onClick={() => {
-                            modal.current.close()
-                            history.push(`/events/detail/${currentEvent.id}`)
-                        }}> No, Cancel </button>
+                            <button className="cancelButton" onClick={() => {
+                                modal.current.close()
+                                history.push(`/events/detail/${currentEvent.id}`)
+                            }}> No, Cancel </button>
+                        </div>
                     </dialog>
 
                 </div>

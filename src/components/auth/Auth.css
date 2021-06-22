@@ -1,10 +1,10 @@
 .h1, h1 {
-    font-size: 2.5rem;
+    font-size: medium;
 }
 
 fieldset {
     min-width: 0;
-    padding: 1rem 0;
+    padding: 5px;
     margin: 0;
     border: 0;
 }
@@ -17,11 +17,11 @@ fieldset {
 
 .form--login > fieldset > input[type="email"],
 .form--login > fieldset > input[type="password"] {
-    width: 25em;
+    width: 25px;
 }
 
 .label--login {
-    width: 8rem;
+    width: 25px;
     display: inline-block;
 }
 
@@ -51,9 +51,9 @@ fieldset {
     background-position-x: center;
     /* background-image: url('./logo.png'); */
     z-index: 1;
-    min-height: 25rem;
-    min-width: 45rem;
-    padding: 0 5rem;
+    min-height: 25px;
+    min-width: 25px;
+    padding: 0 1rem;
     background-color: hsla(0,0%,100%,0.75);
     background-blend-mode: overlay;
     background-repeat: no-repeat;

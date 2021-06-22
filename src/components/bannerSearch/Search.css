@@ -1,43 +1,39 @@
-.banner {
-    max-width: 100%;
-    position: absolute;
-    z-index: -9999;
+.searchBar {
+    background-image: url(../images/longest.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
 
-}
-
-.bannerimg {
-    object-fit: fill;
-    max-width: 100%;
-    text-align: center;
 }
 
 .inputFields {
-    padding: 25%;
+    text-align: center;
+    position: relative;
 }
 
-@media only screen and (max-width: 990px) {
-    .bannerimg {
-        max-width: 100%;
-    }
-    .inputFields {
-        padding: 22%;
-    }
+.inputs{
+    background-color: white;
+    margin: 5px 20px;
+    padding: 3px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
 }
 
-@media only screen and (max-width: 600px) {
-    .bannerimg {
-        max-width: 100%;
-    }
-    .inputFields {
-        padding: 17%;
-    }
-}
-@media only screen and (max-width: 400px) {
-    .bannerimg {
-        max-width: 100%;
-    }
-    .inputFields {
-        padding: 14%;
-    }
+.inputdiv {
+    padding: 0 10px;
 }
 
+.searchInput {
+    width: 50%;
+}
+
+.inputbutton:hover {
+    border-radius: 30px;
+    box-shadow: 0 0 2px 1px #8A25B1;
+}

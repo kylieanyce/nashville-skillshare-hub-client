@@ -1,8 +1,7 @@
 import React, { useContext, useState, useEffect } from "react"
 import { useHistory, useParams } from "react-router-dom"
 import { EventContext } from "./EventProvider.js"
-// import { Header } from "../Header.js";
-// import { Footer } from "../Footer.js";
+import "./CreateForm.css"
 
 
 export const EventForm = () => {
@@ -51,8 +50,6 @@ export const EventForm = () => {
 
     return (
         <>
-            {/* <Header /> */}
-
             <form className="eventForm">
                 {eventId ? <h2 className="eventForm__title">Edit Event</h2> : <h2 className="eventForm__title">Add New Event</h2>}
                 <fieldset>
@@ -152,7 +149,7 @@ export const EventForm = () => {
             </fieldset> */}
                 {
                     eventId
-                        ? <button
+                        ? <div className="saveButtonContainer"><button
                             onClick={evt => {
                                 evt.preventDefault()
                                 updateEvent({
@@ -168,9 +165,10 @@ export const EventForm = () => {
                                 })
                                     .then(() => history.push("/events"))
                             }}
-                            className="btn btn-primary">Save Event</button>
+
+                            lassName="addButton btn btn-primary">Save Event</button></div>
                         :
-                        <button
+                        <div className="saveButtonContainer"><button
                             onClick={evt => {
                                 evt.preventDefault()
                                 createEvent({
@@ -185,7 +183,7 @@ export const EventForm = () => {
                                 })
                                     .then(() => history.push("/events"))
                             }}
-                            className="btn btn-primary">Create Event</button>
+                            className="addButton btn btn-primary">Create Event</button></div>
                 }
             </form>
             {/* <Footer /> */}

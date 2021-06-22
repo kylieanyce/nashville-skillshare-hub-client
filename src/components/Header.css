@@ -1,6 +1,5 @@
 header {
     margin: 0;
-    padding-left: 1em;
     position: sticky;
     display: flex;
     justify-content: left;
@@ -21,9 +20,6 @@ h1 {
 @media only screen and (max-width: 1070px) {
     h1 {
         font-size: 3em;
-        margin: 0;
-        padding: 0;
-        color: black;
         white-space: nowrap;
     }
     header {
@@ -35,12 +31,8 @@ h1 {
 @media only screen and (max-width: 650px) {
     h1 {
         font-size: 1.5em;
-        margin: 0;
-        padding: 0;
-        color: black;
     }
     header {
         height: 3em;
     }
-   
 }
