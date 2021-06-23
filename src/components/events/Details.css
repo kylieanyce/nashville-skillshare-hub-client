@@ -11,19 +11,13 @@
     padding: 30px;
     margin: 10px;
     border-radius: 1px;
-    box-shadow: 0 0 2px 1px #8A25B1;
+    box-shadow: 0 0 1px 1px #353536;
 }
 
-/* .cardHeader {
-    margin: auto;
-    padding-left: 1.5%;
-    border-radius: 1px;
-    box-shadow: 0 0 2px 1px #8A25B1;
-} */
-
-h2 {
+.bookmark h2 {
     text-align: center;
     font-size: medium;
+    font-weight: 400;
 }
 .bookmark {
     display: flex;
@@ -32,9 +26,9 @@ h2 {
     margin: auto;
     padding-left: 1.5%;
     border-radius: 1px;
-    box-shadow: 0 0 2px 1px #8A25B1;
-    background-color: #d1a3e3;
-}
+    box-shadow: 0 0 1px 1px #353536;
+    color: white;
+    background-color: #353536;}
 
 .bookmarkItem {
     margin: none;
@@ -43,7 +37,7 @@ h2 {
 dialog {
     border: #8A25B1;
     border-radius: 1px;
-    box-shadow: 0 0 2px 2px #8A25B1;
+    box-shadow: 0 0 2px 1px #353536;
     background-color: white;
     position: relative;
 }
@@ -55,33 +49,33 @@ dialog {
 
 .deleteButton {
     border-radius: 30px;
-    box-shadow: 0 0 2px 1px #8A25B1;
-    background-color: #d1a3e3;
-    border: none;
+    box-shadow: 0 0 1px 1px #353536;
+    color: white;
+    background-color: #353536;    
 }
 .editButton {
     border-radius: 30px;
-    box-shadow: 0 0 2px 1px #8A25B1;
-    background-color: #d1a3e3;
-    border: none;
+    box-shadow: 0 0 1px 1px #353536;
+    background-color: white;
+    border: black solid 1px;
 }
 .cancelButton {
     border-radius: 30px;
-    box-shadow: 0 0 2px 1px #8A25B1;
+    box-shadow: 0 0 1px 1px #353536;
     background-color: white;
     border: none;
 }
 .deleteButton:hover {
-    border: #8A25B1 1px solid;
-    box-shadow: 0 0 4px 3px #d1a3e3;
+    border: black 1px solid;
+    box-shadow: 0 0 2px 2px #353536;
 }
 .editButton:hover {
-    border: #8A25B1 1px solid;
-    box-shadow: 0 0 4px 3px #d1a3e3;
+    border: black 1px solid;
+    box-shadow: 0 0 2px 2px #353536;
 }
 .cancelButton:hover {
-    border: #8A25B1 1px solid;
-    box-shadow: 0 0 4px 3px #d1a3e3;
+    border: black 1px solid;
+    box-shadow: 0 0 2px 2px #353536;
 }
 
 

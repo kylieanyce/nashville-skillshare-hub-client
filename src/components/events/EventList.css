@@ -19,15 +19,17 @@
     flex-direction: column;
     text-align: left;
     border-radius: 1px;
-    box-shadow: 0 0 2px 1px #8A25B1;
+    box-shadow: 0 0 2px 1px #353536;
 }
 
 .cardHeader {
     margin: auto;
     padding-left: 1.5%;
     border-radius: 30px;
-    background-color: #d1a3e3;
-    box-shadow: 0 0 2px 1px #8A25B1;
+    color: white;
+    background-color: #353536;
+    box-shadow: 0 0 1px 1px #353536;
+    font-weight: 400;
 }
 
 .addContainer {
@@ -38,13 +40,14 @@
 .addButton {
     margin: 20px 100px 0;
     border-radius: 30px;
-    box-shadow: 0 0 2px 1px #8A25B1;
-    background-color: #d1a3e3;
+    color: white;
+    box-shadow: 0 0 2px 1px black;
+    background-color: #353536;
     border: none;
 }
 
 .addButton:hover {
-    box-shadow: 0 0 4px 3px #8A25B1;
+    box-shadow: 0 0 2px 2px black;
 }
 
 a {
@@ -53,15 +56,12 @@ a {
 }
 
 .cardHeader:hover {
-    box-shadow: 0 0 4px 3px #8A25B1;
+    box-shadow: 0 0 2px 2px black;
 
 }
 
 
 @media screen and (max-width: 768px) {
-    /* .cardHeader {
-        box-shadow: 0 0 4px 3px #8A25B1;
-    } */
     .eventCards {
         font-size: small;
     }
