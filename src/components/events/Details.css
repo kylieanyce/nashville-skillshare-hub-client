@@ -10,29 +10,28 @@
     line-height: 1.25rem;
     padding: 30px;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 1px;
     box-shadow: 0 0 2px 1px #8A25B1;
 }
 
-.cardHeader {
+/* .cardHeader {
     margin: auto;
     padding-left: 1.5%;
-    border-radius: 5px;
+    border-radius: 1px;
     box-shadow: 0 0 2px 1px #8A25B1;
-}
+} */
 
 h2 {
     text-align: center;
     font-size: medium;
 }
-
 .bookmark {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
     padding-left: 1.5%;
-    border-radius: 5px;
+    border-radius: 1px;
     box-shadow: 0 0 2px 1px #8A25B1;
     background-color: #d1a3e3;
 }
@@ -43,8 +42,8 @@ h2 {
 
 dialog {
     border: #8A25B1;
-    border-radius: 5px;
-    box-shadow: 0 0 2px 1px #8A25B1;
+    border-radius: 1px;
+    box-shadow: 0 0 2px 2px #8A25B1;
     background-color: white;
     position: relative;
 }
@@ -55,19 +54,19 @@ dialog {
 }
 
 .deleteButton {
-    border-radius: 5px;
+    border-radius: 30px;
     box-shadow: 0 0 2px 1px #8A25B1;
     background-color: #d1a3e3;
     border: none;
 }
 .editButton {
-    border-radius: 5px;
+    border-radius: 30px;
     box-shadow: 0 0 2px 1px #8A25B1;
     background-color: #d1a3e3;
     border: none;
 }
 .cancelButton {
-    border-radius: 5px;
+    border-radius: 30px;
     box-shadow: 0 0 2px 1px #8A25B1;
     background-color: white;
     border: none;
