@@ -43,9 +43,9 @@ export const Register = (props) => {
                 .then(res => {
                     if ("token" in res) {
                         localStorage.setItem("nssh_token", res.token)
-                        props.history.push("/")
                     }
                 })
+                .then(() => props.history.push("/"))
         } else {
             passwordDialog.current.showModal()
         }
