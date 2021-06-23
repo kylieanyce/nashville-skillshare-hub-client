@@ -8,7 +8,7 @@ export const EventProvider = (props) => {
 
 
     const getEvents = () => {
-        return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events`, {
+        return fetch(`http://localhost:8000/events`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nssh_token")}`
             }
@@ -16,6 +16,15 @@ export const EventProvider = (props) => {
             .then(response => response.json())
             .then(setEvents)
     }
+    // const getEvents = () => {
+    //     return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events`, {
+    //         headers: {
+    //             "Authorization": `Token ${localStorage.getItem("nssh_token")}`
+    //         }
+    //     })
+    //         .then(response => response.json())
+    //         .then(setEvents)
+    // }
 
     const searchEvents = (searchTerm) => {
         return fetch(`https://nashville-skillshare-hub-serve.herokuapp.com/events?q=${searchTerm}`, {

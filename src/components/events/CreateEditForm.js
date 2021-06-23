@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react"
 import { useHistory, useParams } from "react-router-dom"
 import { EventContext } from "./EventProvider.js"
+import { BannerImage } from "../bannerSearch/Banner.js"
 import "./CreateForm.css"
 
 
@@ -50,6 +51,7 @@ export const EventForm = () => {
 
     return (
         <>
+            <BannerImage />
             <form className="eventForm">
                 {eventId ? <h2 className="eventForm__title">Edit Event</h2> : <h2 className="eventForm__title">Add New Event</h2>}
                 <fieldset>

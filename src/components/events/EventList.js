@@ -4,13 +4,11 @@ import { EventCard } from "./EventCard.js"
 import { useHistory, useLocation } from 'react-router-dom';
 import { SearchEvents } from "../bannerSearch/Search.js";
 import { BannerImage } from "../bannerSearch/Banner.js"
-// import { Header } from "../Header.js";
-// import { Footer } from "../Footer.js";
 import "./EventList.css"
 
 
 export const EventList = (props) => {
-    const { events, setEvents, getEvents, searchTerms, getMyEvents } = useContext(EventContext)
+    const { events, getEvents, getMyEvents } = useContext(EventContext)
     const history = useHistory();
     const location = useLocation();
     const [myEvents, setMyEvents] = useState(false);
@@ -25,19 +23,8 @@ export const EventList = (props) => {
         }
     }, [location]);
 
-    // useEffect(() => {
-    //     if (searchTerms !== "") {
-    //         const subset = events.filter(event => event.description.toLowerCase().includes(searchTerms) || event.description.toLowerCase().includes(searchTerms))
-    //         setEvents(subset)
-    //     }
-    // }, [searchTerms])
-
     return (
         <>
-            {/* <Header /> */}
-
-
-            {/* <BannerImage /> */}
             <SearchEvents />
             <div className="eventPosts">
                 {myEvents ? <h2 className="neon">My Events</h2> : <h2 className="neon">Explore Upcoming Events</h2>}
@@ -63,8 +50,6 @@ export const EventList = (props) => {
                     })}
                 </div>
             </div>
-            {/* <Footer /> */}
-
         </>
     )
 }
