@@ -38,7 +38,7 @@ h2 {
 }
 
 .bookmarkItem {
-    padding: 5px;
+    margin: none;
 }
 
 dialog {
@@ -73,10 +73,16 @@ dialog {
     border: none;
 }
 .deleteButton:hover {
-    background-color: #8A25B1;
+    border: #8A25B1 1px solid;
+    box-shadow: 0 0 4px 3px #d1a3e3;
+}
+.editButton:hover {
+    border: #8A25B1 1px solid;
+    box-shadow: 0 0 4px 3px #d1a3e3;
 }
 .cancelButton:hover {
-    background-color: #d1a3e3;
+    border: #8A25B1 1px solid;
+    box-shadow: 0 0 4px 3px #d1a3e3;
 }
 
 

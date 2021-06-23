@@ -26,6 +26,8 @@
     margin: auto;
     padding-left: 1.5%;
     border-radius: 5px;
+    background-color: #d1a3e3;
+
     box-shadow: 0 0 2px 1px #8A25B1;
 }
 
@@ -42,20 +44,25 @@
     border: none;
 }
 
+.addButton:hover {
+    box-shadow: 0 0 4px 3px #8A25B1;
+}
+
 a {
     color: black;
     text-decoration: none;
 }
 
 .cardHeader:hover {
-    background-color: #d1a3e3;
+    box-shadow: 0 0 4px 3px #8A25B1;
+
 }
 
 
 @media screen and (max-width: 768px) {
-    .cardHeader {
-        background-color: #d1a3e3;
-    }
+    /* .cardHeader {
+        box-shadow: 0 0 4px 3px #8A25B1;
+    } */
     .eventCards {
         font-size: small;
     }

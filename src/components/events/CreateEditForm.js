@@ -74,16 +74,6 @@ export const EventForm = () => {
                     </div>
                 </fieldset>
 
-                {/* <fieldset>
-                <div className="form-group">
-                    <label htmlFor="time">Time: </label>
-                    <input type="time" id="time" name="time" required autoFocus className="form-control"
-                        value={currentEvent.time}
-                        onChange={changeEventState}
-                    />
-                </div>
-            </fieldset> */}
-
                 <fieldset>
                     <div className="form-group">
                         <label htmlFor="cost">Cost: </label>
