@@ -15,6 +15,10 @@ As someone who believes in mutual aid as a better way to strengthen communities,
 - Django
 - SQL
 
+## Deployed URL
+https://nashville-skillshare-hub-clien.herokuapp.com/
+
+
 ## Features
 
 - The user can log in and log out.
@@ -62,8 +66,10 @@ npm install moment --save
 git clone git@github.com:kylieanyce/nashville-skillshare-hub-server.git
 pip3 install --user pipx
 pipx install pipenv
-pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django
+pipenv install 
 python3 manage.py migrate
+python3 manage.py loaddata events
+python3 manage.py loaddata hosts
 ```
 
 ## How To Use
