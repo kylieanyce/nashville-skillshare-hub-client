@@ -9,12 +9,22 @@ header {
 }
 h1 {
     margin: 0;
-    padding: 0;
+    padding-left: 10px;
     color: black;
     white-space: nowrap;
 	font-size: 5em;  
 	font-weight: bolder;
     font-family: 'Share Tech Mono', monospace;	
+}
+
+.logo {
+    background-image: url(./images/logo.png);
+    background-size: cover;
+    background-position: center;
+    /* position: relative;  */
+    width: 45px;
+    align-items: center;
+    height: 5vh;
 }
 
 @media only screen and (max-width: 1070px) {
