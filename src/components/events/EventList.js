@@ -3,7 +3,6 @@ import { EventContext } from "./EventProvider.js"
 import { EventCard } from "./EventCard.js"
 import { useHistory, useLocation } from 'react-router-dom';
 import { SearchEvents } from "../bannerSearch/Search.js";
-import { BannerImage } from "../bannerSearch/Banner.js"
 import "./EventList.css"
 
 
@@ -13,6 +12,8 @@ export const EventList = (props) => {
     const location = useLocation();
     const [myEvents, setMyEvents] = useState(false);
 
+    // if the pathname contains 'myevents' then getMyEvents is called
+    // if not, then it is not
     useEffect(() => {
         const currentPath = location.pathname;
         if (currentPath.search("myevents") === -1) {

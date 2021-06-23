@@ -20,6 +20,8 @@ export const SearchEvents = () => {
                                 className="searchInput"
                                 onChange={(event) => {
                                     event.preventDefault()
+                                    // sets searchCost var to value of input then calls searchEvents
+                                    // which searches cost by searchCost
                                     setSearchCost(event.target.value)
                                 }}
                                 placeholder="Free... " />
@@ -36,6 +38,8 @@ export const SearchEvents = () => {
                                 className="searchInput"
                                 onChange={(event) => {
                                     event.preventDefault()
+                                    // sets searchDatetime var to value of input
+                                    // then calls searchEvents with searchDatetime
                                     setSearchDatetime(event.target.value)
                                 }}
                                 placeholder="Free... " />

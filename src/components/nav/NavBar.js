@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import "./NavBar.css"
 
+// collapsible top nav bar menu
 export const NavBar = (props) => {
     const myFunction = (event) => {
         event.preventDefault()

@@ -24,23 +24,20 @@ export const EventForm = () => {
     })
 
     useEffect(() => {
-        getEvents()
-            .then(() => {
-                if (eventId) {
-                    getEventById(eventId).then(event => {
-                        setEvent({
-                            title: event.title,
-                            datetime: event.datetime,
-                            cost: event.cost,
-                            location: event.location,
-                            address: event.address,
-                            hostname: event.hostname,
-                            description: event.description,
-                            hosts: event.host
-                        })
-                    })
-                }
+        if (eventId) {
+            getEventById(eventId).then(event => {
+                setEvent({
+                    title: event.title,
+                    datetime: event.datetime,
+                    cost: event.cost,
+                    location: event.location,
+                    address: event.address,
+                    hostname: event.hostname,
+                    description: event.description,
+                    hosts: event.host
+                })
             })
+        }
     }, [])
 
     const changeEventState = (event) => {

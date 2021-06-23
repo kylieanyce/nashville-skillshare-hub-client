@@ -2,8 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { EventContext } from "./EventProvider.js"
 import { EventCard } from "./EventCard.js"
 import { SearchEvents } from "./Search.js";
-// import { Header } from "../Header.js";
-// import { Footer } from "../Footer.js";
+
 
 export const MyEventList = () => {
     const { events, getMyEvents } = useContext(EventContext)
@@ -14,8 +13,6 @@ export const MyEventList = () => {
 
     return (
         <section>
-            {/* <Header /> */}
-
             <h2 className="neon">My Events</h2>
             <SearchEvents />
             <div className="postList">
