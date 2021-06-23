@@ -11,7 +11,18 @@ export const Login = props => {
     const handleLogin = (e) => {
         e.preventDefault()
 
-        return fetch("http://localhost:8000/login", {
+        // return fetch("http://localhost:8000/login", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         "Accept": "application/json"
+        //     },
+        //     body: JSON.stringify({
+        //         username: username.current.value,
+        //         password: password.current.value
+        //     })
+        // })
+        return fetch("https://nashville-skillshare-hub-serve.herokuapp.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -22,17 +33,6 @@ export const Login = props => {
                 password: password.current.value
             })
         })
-            // return fetch("https://nashville-skillshare-hub-serve.herokuapp.com/login", {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //         "Accept": "application/json"
-            //     },
-            //     body: JSON.stringify({
-            //         username: username.current.value,
-            //         password: password.current.value
-            //     })
-            // })
             .then(res => res.json())
             .then(res => {
                 if ("valid" in res && res.valid && "token" in res) {
