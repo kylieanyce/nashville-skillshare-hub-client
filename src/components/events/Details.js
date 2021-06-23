@@ -2,8 +2,7 @@ import React, { useContext, useEffect, useState, useRef } from "react"
 import { useParams, useHistory } from "react-router-dom"
 import { EventContext } from "./EventProvider";
 import moment from "moment"
-// import { Header } from "../Header.js";
-// import { Footer } from "../Footer.js";
+import { BannerImage } from "../bannerSearch/Banner.js";
 import "./Details.css"
 
 
@@ -25,7 +24,7 @@ export const EventDetails = () => {
         hosts: 0
     });
 
-    // grab post by ID from params and set post
+    // grab event by ID from params and set event
     useEffect(() => {
         getEventById(eventId)
             .then((res) => {
@@ -33,16 +32,20 @@ export const EventDetails = () => {
             })
     }, [])
 
+    // handle for modal change
     const handleModal = () => {
         const deleteGuardRail = modal.current.showModal()
     }
 
+    // deletes event and closes modal
     const handleDelete = () => {
         deleteEvent(eventId)
         modal.current.close()
         history.push("/events/myevents")
     }
 
+    // bookmarks event with event id 
+    // then gets events by id which changes bookmark icon to appear bookmarked
     const handleBookmark = () => {
         bookmarkEvent(eventId)
             .then(() => getEventById(eventId)
@@ -51,6 +54,8 @@ export const EventDetails = () => {
                 }))
     }
 
+    // unbookmarks event
+    // gets events by id which changes bookmark icon to appear unbookmarked
     const handleUnbookmark = () => {
         unbookmarkEvent(eventId)
             .then(() => getEventById(eventId)
@@ -61,8 +66,7 @@ export const EventDetails = () => {
 
     return (
         <section>
-            {/* <Header /> */}
-
+            <BannerImage />
             <h2 className="neon">Event Details</h2>
             <div className="details">
                 <div className="detailItem">
@@ -83,7 +87,6 @@ export const EventDetails = () => {
                         </div>
                     }
 
-
                     <p><strong>Date: </strong>{moment(currentEvent.datetime).format("LL")}</p>
                     <p><strong>Time: </strong>{moment(currentEvent.datetime).format("LT")}</p>
                     <p><strong>Cost: </strong>$ {currentEvent.cost}</p>
@@ -91,6 +94,7 @@ export const EventDetails = () => {
                     <p style={{ textTransform: 'capitalize' }}><strong>Location: </strong>{currentEvent.location}</p>
                     <p style={{ textTransform: 'capitalize' }}><strong>Address: </strong>{currentEvent.address}</p>
                     <p><strong>Event Description: </strong>{currentEvent.description}</p>
+
                     {currentEvent.organizers ?
                         <div className="deleteButtonContainer">
                             <button className="deleteButton" onClick={handleModal}> Delete </button>

@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react"
 import { useHistory, useParams } from "react-router-dom"
 import { EventContext } from "./EventProvider.js"
+import { BannerImage } from "../bannerSearch/Banner.js"
 import "./CreateForm.css"
 
 
@@ -23,23 +24,20 @@ export const EventForm = () => {
     })
 
     useEffect(() => {
-        getEvents()
-            .then(() => {
-                if (eventId) {
-                    getEventById(eventId).then(event => {
-                        setEvent({
-                            title: event.title,
-                            datetime: event.datetime,
-                            cost: event.cost,
-                            location: event.location,
-                            address: event.address,
-                            hostname: event.hostname,
-                            description: event.description,
-                            hosts: event.host
-                        })
-                    })
-                }
+        if (eventId) {
+            getEventById(eventId).then(event => {
+                setEvent({
+                    title: event.title,
+                    datetime: event.datetime,
+                    cost: event.cost,
+                    location: event.location,
+                    address: event.address,
+                    hostname: event.hostname,
+                    description: event.description,
+                    hosts: event.host
+                })
             })
+        }
     }, [])
 
     const changeEventState = (event) => {
@@ -50,6 +48,7 @@ export const EventForm = () => {
 
     return (
         <>
+            <BannerImage />
             <form className="eventForm">
                 {eventId ? <h2 className="eventForm__title">Edit Event</h2> : <h2 className="eventForm__title">Add New Event</h2>}
                 <fieldset>
@@ -71,16 +70,6 @@ export const EventForm = () => {
                         />
                     </div>
                 </fieldset>
-
-                {/* <fieldset>
-                <div className="form-group">
-                    <label htmlFor="time">Time: </label>
-                    <input type="time" id="time" name="time" required autoFocus className="form-control"
-                        value={currentEvent.time}
-                        onChange={changeEventState}
-                    />
-                </div>
-            </fieldset> */}
 
                 <fieldset>
                     <div className="form-group">

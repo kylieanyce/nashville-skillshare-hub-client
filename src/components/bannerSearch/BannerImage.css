@@ -1,5 +1,9 @@
-/* #bannerimg {
-    text-align: center;
-    background-position: center center;
-    background-attachment: fixed;
-} */
+.bannerOverlay {
+    background-image: url(../images/longest.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+    width: 100%;
+    align-items: center;
+    height: 25vh;
+}

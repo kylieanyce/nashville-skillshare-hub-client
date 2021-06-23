@@ -7,7 +7,6 @@ export const BannerImage = () => {
         <>
             <div className="bannerOverlay">
                 <div className="bannerimgContainer">
-                    <img className="bannerimg" src="../banner.jpg" />
                 </div>
             </div>
         </>

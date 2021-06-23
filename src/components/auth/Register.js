@@ -23,7 +23,7 @@ export const Register = (props) => {
                 "password": password.current.value
             }
 
-            return fetch("https://nashville-skillshare-hub-serve.herokuapp.com/register", {
+            return fetch("http://localhost:8000/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -31,6 +31,14 @@ export const Register = (props) => {
                 },
                 body: JSON.stringify(newUser)
             })
+                // return fetch("https://nashville-skillshare-hub-serve.herokuapp.com/register", {
+                //     method: "POST",
+                //     headers: {
+                //         "Content-Type": "application/json",
+                //         "Accept": "application/json"
+                //     },
+                //     body: JSON.stringify(newUser)
+                // })
                 .then(res => res.json())
                 .then(res => {
                     if ("token" in res) {
