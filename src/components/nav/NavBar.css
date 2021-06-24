@@ -3,6 +3,7 @@
     background-color: #F09116;
     overflow: hidden;
   }
+  
 
   /* Style the links inside the navigation bar */
   .topnav a {
@@ -21,6 +22,10 @@
     text-decoration: underline;
   }
   
+  .logout {
+    justify-self: right;
+  }
+
   /* Add an active class to highlight the current page */
   .topnav a.active {
     background-color: #F09116;

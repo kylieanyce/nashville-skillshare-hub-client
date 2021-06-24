@@ -19,7 +19,7 @@ export const NavBar = (props) => {
             <Link to="/" className="active">Home</Link>
             <Link to="/events/myevents" className="active">My Events</Link>
             <Link to="/events/mybookmarks" className="active">Bookmarks</Link>
-            <Link to="/login" className="active">Logout</Link>
+            <Link to="/login" className="logout active">Logout</Link>
             <a className="icon" onClick={myFunction}>
                 <i className="fa fa-bars"></i>
             </a>

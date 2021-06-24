@@ -27,13 +27,12 @@
 
 .inputdiv {
     padding: 0 10px;
+    
+}
+.borderdiv {
+    border-left: lightgray 1px solid;
 }
 
 .searchInput {
     width: 50%;
-}
-
-.inputbutton:hover {
-    border-radius: 30px;
-    box-shadow: 0 0 2px 1px #8A25B1;
 }
