@@ -34,7 +34,7 @@
     margin: none;
 }
 
-dialog {
+.modal {
     border: #8A25B1;
     border-radius: 1px;
     box-shadow: 0 0 2px 1px #353536;

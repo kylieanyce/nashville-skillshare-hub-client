@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom"
 import { EventContext } from "./EventProvider";
 import moment from "moment"
 import { BannerImage } from "../bannerSearch/Banner.js";
+import Modal from 'react-modal';
 import "./Details.css"
 
 
@@ -10,7 +11,7 @@ export const EventDetails = () => {
     const { getEventById, deleteEvent, bookmarkEvent, unbookmarkEvent } = useContext(EventContext)
     const { eventId } = useParams();
     const history = useHistory();
-    const modal = useRef();
+    const [modalOpen, setModalOpen] = useState(false)
 
     // set post state variable
     const [currentEvent, setEvent] = useState({
@@ -32,15 +33,11 @@ export const EventDetails = () => {
             })
     }, [])
 
-    // handle for modal change
-    const handleModal = () => {
-        const deleteGuardRail = modal.current.showModal()
-    }
 
     // deletes event and closes modal
     const handleDelete = () => {
         deleteEvent(eventId)
-        modal.current.close()
+        setModalOpen(false)
         history.push("/events/myevents")
     }
 
@@ -54,6 +51,9 @@ export const EventDetails = () => {
                 }))
     }
 
+    const handleModalClose = () => {
+        setModalOpen(false);
+    };
     // unbookmarks event
     // gets events by id which changes bookmark icon to appear unbookmarked
     const handleUnbookmark = () => {
@@ -97,21 +97,24 @@ export const EventDetails = () => {
 
                     {currentEvent.organizers ?
                         <div className="deleteButtonContainer">
-                            <button className="deleteButton" onClick={handleModal}> Delete </button>
+                            <button className="deleteButton" onClick={() => setModalOpen(true)}> Delete </button>
                             <button className="editButton" onClick={() => history.push(`/events/${currentEvent.id}/edit`)}> Edit </button >
                         </div>
                         : ""}
-                    <dialog className="guardRailModal" ref={modal}>
+                    <Modal className="modal"
+                        isOpen={modalOpen}
+                        onRequestClose={() => setModalOpen(false)}
+                        onClose={handleModalClose}>
                         <h3>Delete</h3>
                         <p>Are you sure you want to delete this event? </p>
                         <div className="deleteButtonContainer"><button className="deleteButton" onClick={handleDelete}>Delete</button>
 
                             <button className="cancelButton" onClick={() => {
-                                modal.current.close()
+                                setModalOpen(false)
                                 history.push(`/events/detail/${currentEvent.id}`)
                             }}> No, Cancel </button>
                         </div>
-                    </dialog>
+                    </Modal>
 
                 </div>
             </div>
