@@ -4,6 +4,9 @@ import { BrowserRouter as Router } from "react-router-dom"
 import { NashSSHub } from "./components/NashSSHub.js"
 import './index.css';
 import moment from "moment";
+import ReactModal from 'react-modal';
+
+ReactModal.setAppElement('#root')
 
 ReactDOM.render(
   <React.StrictMode>
