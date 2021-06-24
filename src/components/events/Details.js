@@ -101,10 +101,22 @@ export const EventDetails = () => {
                             <button className="editButton" onClick={() => history.push(`/events/${currentEvent.id}/edit`)}> Edit </button >
                         </div>
                         : ""}
-                    <Modal className="modal"
+                    <Modal portalClassName="modal"
                         isOpen={modalOpen}
                         onRequestClose={() => setModalOpen(false)}
-                        onClose={handleModalClose}>
+                        onClose={handleModalClose}
+                        style={{
+                            content: {
+                                border: '#8A25B1',
+                                borderRadius: '1px',
+                                boxShadow: '0 0 2px 1px #353536',
+                                backgroundColor: 'white',
+                                height: '20%',
+                                width: '71%',
+                                margin: 'auto',
+                            }
+                        }}
+                    >
                         <h3>Delete</h3>
                         <p>Are you sure you want to delete this event? </p>
                         <div className="deleteButtonContainer"><button className="deleteButton" onClick={handleDelete}>Delete</button>
